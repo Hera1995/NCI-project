@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:mysql://myncidb.cfxq6ffspsct.eu-north-1.rds.amazonaws.com/ncidb
+    username: admin
+    password: X22187804ncirl
+
+  #jsp template
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+
+server:
+  port: 8080
+  servlet:
+    context-path: /FilmReview #project name
+    jsp:
+      init-parameters:
+        development: true
+
+mybatis:
+  mapper-locations: classpath:com/nci/filmreview/mapper/*.xml
+  type-aliases-package: com.nci.filmreview.entity
+
+logging:
+  level:
+    root: info
+    com.nci.filmreview.dao: debug #指定包日志
