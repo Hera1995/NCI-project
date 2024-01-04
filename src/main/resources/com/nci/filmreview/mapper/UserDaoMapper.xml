@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-        <mapper namespace="com.nci.filmreview.dao.UserDao">
+<mapper namespace="com.nci.filmreview.dao.UserDao">
 
     <!-- search user based on email -->
-    <select id="findByEmail" parameterType="String" resultType="User">
-        select id, email, Fname, Lname, password from user
+    <select id="findByEmail" parameterType="java.lang.String" resultType="com.nci.filmreview.entity.User">
+        select *
+        from user
         where email = #{email}
     </select>
 
     <!--user register-->
-    <insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
-        insert into user values(#{id},#{email},#{Fname},#{Lname},#{password})
+    <insert id="save" parameterType="com.nci.filmreview.entity.User" useGeneratedKeys="true" keyProperty="id">
+        insert into user
+        values (#{email}, #{Fname}, #{Lname}, #{password}, #{type})
     </insert>
 </mapper>

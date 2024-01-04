@@ -3,6 +3,9 @@ spring:
     url: jdbc:mysql://myncidb.cfxq6ffspsct.eu-north-1.rds.amazonaws.com/ncidb
     username: admin
     password: X22187804ncirl
+  jpa:
+    hibernate:
+      ddl-auto: update
 
   #jsp template
   mvc:
@@ -20,7 +23,8 @@ server:
 
 mybatis:
   mapper-locations: classpath:com/nci/filmreview/mapper/*.xml
-  type-aliases-package: com.nci.filmreview.entity
+  configuration:
+    map-underscore-to-camel-case: true
 
 logging:
   level:

@@ -6,4 +6,7 @@ public interface UserService {
 
     //user register
     void register(User user);
+
+    //user login
+    User login(String email, String password);
 }

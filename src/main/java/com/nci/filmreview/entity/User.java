@@ -1,26 +1,21 @@
 package com.nci.filmreview.entity;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class User {
     //data members
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String email;
-    private String Fname;
-    private String Lname;
+    private String fName;
+    private String lName;
     private String password;
+    private Boolean type;
 
-    //constructors
-    public User() {
-    }
-
-    public User(Integer id, String email, String fname, String lname, String password) {
-        this.id = id;
-        this.email = email;
-        Fname = fname;
-        Lname = lname;
-        this.password = password;
-    }
-
-    //setters and getters
     public Integer getId() {
         return id;
     }
@@ -37,20 +32,20 @@ public class User {
         this.email = email;
     }
 
-    public String getFname() {
-        return Fname;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFname(String fname) {
-        Fname = fname;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public String getLname() {
-        return Lname;
+    public String getlName() {
+        return lName;
     }
 
-    public void setLname(String lname) {
-        Lname = lname;
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
     public String getPassword() {
@@ -59,5 +54,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isType() {
+        return type;
+    }
+
+    public void setType(boolean type) {
+        this.type = type;
     }
 }

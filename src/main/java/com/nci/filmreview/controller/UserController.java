@@ -2,38 +2,62 @@ package com.nci.filmreview.controller;
 
 import com.nci.filmreview.entity.User;
 import com.nci.filmreview.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 @Controller
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController {
 
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
+    @Resource
     private UserService userService;
 
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+
+    /**
+     * user login
+     *
+     * @return
+     */
+    @PostMapping("/login")
+    public String login(@ModelAttribute User user, HttpSession session) {
+        log.debug("email:{},password:{}", user.getEmail(), user.getPassword());
+        //1.find the account by email
+        try {
+            //log in
+            user = userService.login(user.getEmail(), user.getPassword());
+            //store user login getMessage()tokens
+            session.setAttribute("user", user);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return "redirect:/login.html";
+        }
+
+        return "redirect:/index.html";
     }
 
-    //user register
-    @RequestMapping("register")
-    public String register(User user) {
+    /**
+     * user register
+     *
+     * @return
+     */
+    @PostMapping("/register")
+    public String register(@ModelAttribute User user) {
         log.debug("email:{}, first name:{}, last name:{}, password:{}",
-                user.getEmail(), user.getFname(), user.getLname(), user.getPassword());
-
+                user.getEmail(), user.getfName(), user.getlName(), user.getPassword());
         try {
             userService.register(user);
         } catch (RuntimeException e) {
-            e.printStackTrace();
-            return "redirect:/register.html?msg=" + e.getMessage();
+            log.debug(e.getMessage());
+            return "redirect:/register.html";
         }
 
         return "redirect:/login.html";
