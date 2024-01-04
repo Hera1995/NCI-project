@@ -50,8 +50,8 @@
             </div>
             <div class="col-sm-3 header_right">
                 <ul class="header_right_box">
-                    <li><img src="images/p1.png" alt=""/></li>
-                    <li><p><a href="login.jsp">Carol Varois</a></p></li>
+                    <li><img src="images/p0.png" alt=""/></li>
+                    <li><p><a href="login.jsp">Log in</a></p></li>
                     <li class="last"><i class="edit"> </i></li>
                     <div class="clearfix"></div>
                 </ul>
@@ -60,10 +60,12 @@
         </div>
         <div class="content">
             <div class="register">
-                <form action="http://localhost:8080/FilmReview/user/register" method="post">
+                <form action="${pageContext.request.contextPath}/user/register" method="post">
+<%--                    action="http://localhost:8080/FilmReview/user/register"--%>
                     <div class="register-top-grid">
-                        <h3>Personal Information</h3>
-                        <!-- ${param.msg}-->
+                        <h3>Personal Information  </h3>
+                        <p class ="error-alarm">${param.msg}</p>
+
                         <div>
                             <span>First Name<label>*</label></span>
                             <input type="text" name="fName" required="required">

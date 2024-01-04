@@ -63,8 +63,8 @@
             </div>
             <div class="col-sm-3 header_right">
                 <ul class="header_right_box">
-                    <li><img src="images/p1.png" alt=""/></li>
-                    <li><p><a href="login.jsp">Carol Varois</a></p></li>
+                    <li><img src="images/p0.png" alt=""/></li>
+                    <li><p><a href="login.jsp">Log in</a></p></li>
                     <li class="last"><i class="edit"> </i></li>
                     <div class="clearfix"></div>
                 </ul>
@@ -135,12 +135,12 @@
                                                                                        src="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2893453291.webp"
                                                                                        rel="v:image"
                                                                                        class="img-responsive"/> </a>
-                            <div class="captionme">
-                                <ul class="list_3">
-                                    <li><i class="icon5"> </i>
-                                        <p>3,548</p></li>
-                                </ul>
-                            </div>
+<%--                            <div class="captionme">--%>
+<%--                                <ul class="list_3">--%>
+<%--                                    <li><i class="icon5"> </i>--%>
+<%--                                        <p>3,548</p></li>--%>
+<%--                                </ul>--%>
+<%--                            </div>--%>
                         </div>
 
                         <div class="main-bd">
@@ -148,29 +148,36 @@
                             <header class="main-hd">
                                 <h2>NAME</h2>
                             </header>
-
                             <header class="main-hd">
-                                <a href="https://www.douban.com/people/183293845/" class="avator">
-                                    <img width="24" height="24" src="https://img3.doubanio.com/icon/u183293845-17.jpg">
-                                </a>
-
-                                <a href="https://www.douban.com/people/183293845/"
-                                   class="name">&nbsp;&nbsp;扶不起先生</a>
-
-                                <span class="allstar20 main-title-rating" title="较差"></span>
-
-                                <span content="2024-01-02"
-                                      class="main-meta">&nbsp;&nbsp;&nbsp;&nbsp;2024-01-02 00:57:28</span>
-
+                                <h4>Year</h4>
+                            </header>
+                            <header class="main-hd">
+                                <h4>imdbID</h4>
                             </header>
 
-                            <h2>
-                                <a href="https://movie.douban.com/review/15657671/">春天的放牛班观影团第87期周限定——《反叛之月：火之女》</a>
-                            </h2>
+
+<%--                            <header class="main-hd">--%>
+<%--                                <a href="https://www.douban.com/people/183293845/" class="avator">--%>
+<%--                                    <img width="24" height="24" src="https://img3.doubanio.com/icon/u183293845-17.jpg">--%>
+<%--                                </a>--%>
+
+<%--                                <a href="https://www.douban.com/people/183293845/"--%>
+<%--                                   class="name">&nbsp;&nbsp;${name}</a>--%>
+
+<%--                                <span class="allstar20 main-title-rating" title="较差"></span>--%>
+
+<%--                                <span content="2024-01-02"--%>
+<%--                                      class="main-meta">&nbsp;&nbsp;&nbsp;&nbsp;2024-01-02 00:57:28</span>--%>
+
+<%--                            </header>--%>
+
+<%--                            <h2>--%>
+<%--                                <a href="#">春天的放牛班观影团第87期周限定——《反叛之月：火之女》</a>--%>
+<%--                            </h2>--%>
 
                             <div class="review-short">
                                 <div class="short-content">
-
+                                    description
                                     种自己的花，爱自己的宇宙
                                     你身边有扎斯林群体吗？组织是否已被邪教徒渗透？小心这些极端的影迷，敬而远之就对了。相信我，扎斯林不是单个领域的化身，他们无处不在！也许我就是其中一位，所以你们打差评分明就是在迫害我扎哥哥好不好，哈哈～玩笑点到为止，让我们言归正传。本...
 

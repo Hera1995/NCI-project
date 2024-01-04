@@ -2,7 +2,9 @@ package com.nci.filmreview.service;
 
 import com.nci.filmreview.dao.UserDao;
 import com.nci.filmreview.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.ObjectUtils;
 
@@ -10,12 +12,13 @@ import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Resource
     private UserDao userDao;
 
-   /* @Autowired
+/*    @Autowired
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }*/
@@ -31,8 +34,9 @@ public class UserServiceImpl implements UserService {
 
         //encrypt passwords
         String passwordSecret = DigestUtils.md5DigestAsHex(user.getPassword().getBytes(StandardCharsets.UTF_8));
-        user.setType(false);
         user.setPassword(passwordSecret);
+        user.setType(false);
+
         //register
         userDao.save(user);
 

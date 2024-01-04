@@ -50,8 +50,8 @@
             </div>
             <div class="col-sm-3 header_right">
                 <ul class="header_right_box">
-                    <li><img src="images/p1.png" alt=""/></li>
-                    <li><p><a href="login.jsp">Carol Varois</a></p></li>
+                    <li><img src="images/p0.png" alt=""/></li>
+                    <li><p><a href="login.jsp">Log in</a></p></li>
                     <li class="last"><i class="edit"> </i></li>
                     <div class="clearfix"></div>
                 </ul>

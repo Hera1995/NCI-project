@@ -37,8 +37,8 @@
             </div>
             <div class="col-sm-3 header_right">
                 <ul class="header_right_box">
-                    <li><img src="images/p1.png" alt=""/></li>
-                    <li><p><a href="login.jsp">Carol Varois</a></p></li>
+                    <li><img src="images/p0.png" alt=""/></li>
+                    <li><p><a href="login.jsp">Log in</a></p></li>
                     <li class="last"><i class="edit"> </i></li>
                     <div class="clearfix"> </div>
                 </ul>
@@ -55,15 +55,15 @@
                 <div class="col-md-6 login-right">
                     <h3>Registered Customers</h3>
                     <p>If you have an account with us, please log in.</p>
-                    <!--${param.msg}-->
+                    <p class="error-alarm">${param.msg}</p>
                     <form action="${pageContext.request.contextPath}/user/login" method="post">
                         <div>
                             <span>Email Address<label>*</label></span>
-                            <input type="text" name="email">
+                            <input type="email" name="email" required="required">
                         </div>
                         <div>
                             <span>Password<label>*</label></span>
-                            <input type="text" name="password">
+                            <input type="text" name="password" required="required" maxlength="8" minlength="8">
                         </div>
                         <a class="forgot" href="#">Forgot Your Password?</a>
                         <input type="submit" value="Login">

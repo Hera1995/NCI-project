@@ -6,6 +6,8 @@ import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,7 @@ public class UserController {
 
     @Resource
     private UserService userService;
+
 
 
     /**
@@ -38,10 +41,10 @@ public class UserController {
             session.setAttribute("user", user);
         } catch (Exception e) {
             log.error(e.getMessage());
-            return "redirect:/login.html";
+            return "redirect:/login.jsp?msg="+e.getMessage();
         }
 
-        return "redirect:/index.html";
+        return "redirect:/index.jsp";
     }
 
     /**
@@ -49,6 +52,8 @@ public class UserController {
      *
      * @return
      */
+
+//    @RequestMapping("/register")
     @PostMapping("/register")
     public String register(@ModelAttribute User user) {
         log.debug("email:{}, first name:{}, last name:{}, password:{}",
@@ -57,10 +62,10 @@ public class UserController {
             userService.register(user);
         } catch (RuntimeException e) {
             log.debug(e.getMessage());
-            return "redirect:/register.html";
+            return "redirect:/register.jsp?msg="+e.getMessage();
         }
 
-        return "redirect:/login.html";
+        return "redirect:/login.jsp";
     }
 
 
