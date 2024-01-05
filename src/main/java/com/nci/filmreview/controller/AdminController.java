@@ -1,6 +1,5 @@
 package com.nci.filmreview.controller;
 
-import com.nci.filmreview.entity.Review;
 import com.nci.filmreview.entity.User;
 import com.nci.filmreview.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +20,18 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    @RequestMapping("list")
-    public String ListUsers(Model model){
+    @RequestMapping("listUser")
+    public String ListUsers(Model model) {
         //get list
         List<User> users = adminService.list();
 
         model.addAttribute("users", users);
         return "detail";
+    }
+
+    @RequestMapping("addUser")
+    public String addUser(User user) {
+
+        return "";
     }
 }

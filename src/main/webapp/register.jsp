@@ -83,7 +83,7 @@
                         <h3>Login Information</h3>
                         <div>
                             <span>Password<label>*</label></span>
-                            <input type="text" name="password" maxlength="8" minlength="8" required="required">
+                            <input type="password" name="password" maxlength="8" minlength="8" required="required">
                         </div>
 
                         <div class="clearfix"></div>

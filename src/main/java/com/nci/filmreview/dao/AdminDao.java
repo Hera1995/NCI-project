@@ -5,7 +5,7 @@ import com.nci.filmreview.entity.User;
 import java.util.List;
 
 public interface AdminDao {
-    //查询所有user
+    //list all users
     List<User> list();
 
 }

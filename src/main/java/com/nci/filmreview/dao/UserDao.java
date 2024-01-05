@@ -1,7 +1,10 @@
 package com.nci.filmreview.dao;
 
+import com.nci.filmreview.entity.Review;
 import com.nci.filmreview.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface UserDao {
@@ -10,4 +13,7 @@ public interface UserDao {
 
     //user register
     void save(User user);
+
+    //list all reviews
+    List<Review> list();
 }

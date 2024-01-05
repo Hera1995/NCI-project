@@ -58,7 +58,7 @@
                         </div>
                         <div>
                             <span>Password<label>*</label></span>
-                            <input type="text" name="password" required="required" maxlength="8" minlength="8">
+                            <input type="password" name="password" required="required" maxlength="8" minlength="8">
                         </div>
                         <a class="forgot" href="#">Forgot Your Password?</a>
                         <input type="submit" value="Login">

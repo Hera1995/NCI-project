@@ -1,15 +1,16 @@
 package com.nci.filmreview.service;
 
 import com.nci.filmreview.dao.UserDao;
+import com.nci.filmreview.entity.Review;
 import com.nci.filmreview.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.ObjectUtils;
 
-import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @Service
 @Transactional
@@ -57,5 +58,10 @@ public class UserServiceImpl implements UserService {
         if (!user.getPassword().equals(digestPassword)) throw new RuntimeException("Wrong password!");
 
         return user;
+    }
+
+    @Override
+    public List<Review> list() {
+        return this.userDao.list();
     }
 }

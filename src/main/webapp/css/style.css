@@ -299,7 +299,7 @@ ul.callbacks_tabs.callbacks1_tabs {
   text-decoration: none;
   height:117px;
   width:30px;
-  background: transparent url("../images/arrows.png") no-repeat left top;
+  background: transparent url("#") no-repeat left top;
   margin-top: -45px;
   }
 .callbacks_nav.next {
@@ -958,14 +958,7 @@ p.movie__option a{
 	z-index: 100;
 	margin-top:-2em;
 }
-.nbs-flexisel-nav-left {
-	left: 0px;
-	background: url(../images/img-sprite.png) no-repeat -15px -113px;
-}
-.nbs-flexisel-nav-right {
-	right: 0px;
-	background: url(../images/img-sprite.png) no-repeat -76px -113px;
-}
+
 h1.recent {
 padding: 0 15px;
 margin: 1em 0;
@@ -1076,7 +1069,7 @@ padding-left: 15px;
 .sky-form .rating label {
 	display: block;
 	float: right;
-	height: -4px;
+
 	cursor: pointer;
 }
 .sky-form [class^="icon-"] {
@@ -1288,6 +1281,14 @@ text-transform: uppercase;
 	padding:10px;
 	-webkit-appearance: none;
 }
+.login-right input[type="password"] {
+	border: 1px solid #E4E4E4;
+	outline-color:#d8232a;
+	width: 96%;
+	font-size:0.8125em;
+	padding:10px;
+	-webkit-appearance: none;
+}
 .login-right input[type="submit"] {
 	background: #d8232a;
 	color: #FFF;
@@ -1351,6 +1352,15 @@ p.cart {
 }
 
 .register-top-grid input[type="email"], .register-bottom-grid input[type="email"] {
+	border: 1px solid #EEE;
+	outline-color:#FF5B36;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+	-webkit-appearance: none;
+}
+
+.register-top-grid input[type="password"], .register-bottom-grid input[type="password"] {
 	border: 1px solid #EEE;
 	outline-color:#FF5B36;
 	width: 96%;
@@ -1728,8 +1738,7 @@ h2.m_3 {
 
 .main-hd {
   display: flex;
-  justify-content: left; 
-  align-items: left;
+  justify-content: left;
   margin-bottom: 10px; /* 头部信息与文字内容的间距 */
 }
 
