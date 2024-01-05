@@ -12,6 +12,6 @@ public class Test {
         User user = null;
         model.addAttribute("name", "hera");
         model.addAttribute("user", user);
-        return "index-1";
+        return "test";
     }
 }

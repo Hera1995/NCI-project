@@ -30,18 +30,24 @@ public class UserController {
      *
      * @return
      */
-    @PostMapping("/login")
-    public String login(@ModelAttribute User user, HttpSession session) {
+    @PostMapping("/login")          //HttpSession session
+    public String login(@ModelAttribute User user, Model model) {
         log.debug("email:{},password:{}", user.getEmail(), user.getPassword());
         //1.find the account by email
         try {
             //log in
             user = userService.login(user.getEmail(), user.getPassword());
+
+            //store user info
+            model.addAttribute("user", user);
+
             //store user login getMessage()tokens
-            session.setAttribute("user", user);
+            //session.setAttribute("user", user);
         } catch (Exception e) {
             log.error(e.getMessage());
             return "redirect:/login.jsp?msg="+e.getMessage();
+
+
         }
 
         return "redirect:/index.jsp";

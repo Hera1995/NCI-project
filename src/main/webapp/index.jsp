@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Hera
-  Date: 2024/1/4
-  Time: 17:31
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -64,7 +59,11 @@
             <div class="col-sm-3 header_right">
                 <ul class="header_right_box">
                     <li><img src="images/p0.png" alt=""/></li>
-                    <li><p><a href="login.jsp">Log in</a></p></li>
+                    <li><p><a href="login.jsp">Log in</a>
+                        <c:if test="${not empty user}">
+                        <p>Welcome, ${user.fName} ${user.lName}!</p>
+                        </c:if>
+                        </p></li>
                     <li class="last"><i class="edit"> </i></li>
                     <div class="clearfix"></div>
                 </ul>
