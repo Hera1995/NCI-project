@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "Review")
+@Table//(name = "Review")
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +19,19 @@ public class Review {
     private Date date;
 
     private String content;
+
+
+    //constructors
+    public Review() {
+    }
+
+    public Review(Integer id, Integer userID, String imdbID, Date date, String content) {
+        this.id = id;
+        this.userID = userID;
+        this.imdbID = imdbID;
+        this.date = date;
+        this.content = content;
+    }
 
     //getters and setters
     public Integer getId() {

@@ -16,6 +16,8 @@ public class User {
     private String password;
     private Boolean type;
 
+
+    //setters and getters
     public Integer getId() {
         return id;
     }

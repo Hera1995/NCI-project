@@ -1821,3 +1821,84 @@ h2.m_3 {
 .error-alarm{
 	color: red;
 }
+
+
+/***********************index design2**********************/
+/* put text areas and pictures in the center */
+.center {
+	text-align: center;
+}
+
+
+.top3 {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.box {
+	width: 33.33%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.box img {
+	max-width: 100%;
+	height: auto;
+}
+
+.box span {
+	display: block;
+	margin-top: 10px;
+}
+
+.box p {
+	font-size: 15px;
+	font-family: Arial;
+	padding: 2px;
+}
+
+/* set elements in the div vertically */
+.vertical {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.addtobasket {
+	outline: none;
+	background-color: #3f444e;
+	color: white;
+	font-size: 15px;
+	font-weight: 500;
+	border: none;
+	width: 180px;
+	height: 45px;
+	padding: 2px;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.addtobasket:hover {
+	background-color: #6d7586;
+	color: black;
+}
+
+@media screen and (max-width: 980px){
+
+	.box {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 700px){
+	.box {
+		width: 100%;
+	}
+}
+

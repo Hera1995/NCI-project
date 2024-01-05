@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <!DOCTYPE HTML>
@@ -61,7 +60,7 @@
                     <li><img src="images/p0.png" alt=""/></li>
                     <li><p><a href="login.jsp">Log in</a>
                         <c:if test="${not empty user}">
-                        <p>Welcome, ${user.fName} ${user.lName}!</p>
+                        <p>${user.fName} ${user.lName}</p>
                         </c:if>
                         </p></li>
                     <li class="last"><i class="edit"> </i></li>
@@ -122,173 +121,145 @@
                 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">MovieReview</a></div>
             </div>
 
-            <div class="box_2 containerme">
+            <div>
+
 
                 <!-- reviews div 1***************************************************************	-->
 
-                <div data-cid="#">
-                    <div class="review-item">
-                        <div class="subject-img">
-                            <a href="https://movie.douban.com/subject/35517441/"> <img alt="月球叛军：火之女"
-                                                                                       title="月球叛军：火之女"
-                                                                                       src="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2893453291.webp"
-                                                                                       rel="v:image"
-                                                                                       class="img-responsive"/> </a>
-<%--                            <div class="captionme">--%>
-<%--                                <ul class="list_3">--%>
-<%--                                    <li><i class="icon5"> </i>--%>
-<%--                                        <p>3,548</p></li>--%>
-<%--                                </ul>--%>
-<%--                            </div>--%>
+                <div class="center">
+
+                    <!-- put 3 pictures in another div to style pictures -->
+                    <div class="top3" >
+                        <div class="box">
+                            <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
+                            <a href="detail.jsp"> <img src="../images/book2.jpg" alt="Mindful"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Title</b></p>
+                                <p class="price"><b>Year</b></p>
+                                <a href="detail.jsp"><button type="button" class="addtobasket" >Review</button></a>
+                            </div>
                         </div>
-
-                        <div class="main-bd">
-
-                            <header class="main-hd">
-                                <h2>NAME</h2>
-                            </header>
-                            <header class="main-hd">
-                                <h4>Year</h4>
-                            </header>
-                            <header class="main-hd">
-                                <h4>imdbID</h4>
-                            </header>
-
-
-<%--                            <header class="main-hd">--%>
-<%--                                <a href="https://www.douban.com/people/183293845/" class="avator">--%>
-<%--                                    <img width="24" height="24" src="https://img3.doubanio.com/icon/u183293845-17.jpg">--%>
-<%--                                </a>--%>
-
-<%--                                <a href="https://www.douban.com/people/183293845/"--%>
-<%--                                   class="name">&nbsp;&nbsp;${name}</a>--%>
-
-<%--                                <span class="allstar20 main-title-rating" title="较差"></span>--%>
-
-<%--                                <span content="2024-01-02"--%>
-<%--                                      class="main-meta">&nbsp;&nbsp;&nbsp;&nbsp;2024-01-02 00:57:28</span>--%>
-
-<%--                            </header>--%>
-
-<%--                            <h2>--%>
-<%--                                <a href="#">春天的放牛班观影团第87期周限定——《反叛之月：火之女》</a>--%>
-<%--                            </h2>--%>
-
-                            <div class="review-short">
-                                <div class="short-content">
-                                    description
-                                    种自己的花，爱自己的宇宙
-                                    你身边有扎斯林群体吗？组织是否已被邪教徒渗透？小心这些极端的影迷，敬而远之就对了。相信我，扎斯林不是单个领域的化身，他们无处不在！也许我就是其中一位，所以你们打差评分明就是在迫害我扎哥哥好不好，哈哈～玩笑点到为止，让我们言归正传。本...
-
-                                </div>
+                        <div class="box">
+                            <a href="#"> <img src="../images/book3.jpg" alt="Ttile"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Title</b></p>
+                                <p class="price"><b>Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <a href="#"> <img src="../images/book4.jpg" alt="Eugene"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Title</b></p>
+                                <p class="price"><b>Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- reviews div 2***************************************************************	-->
 
-                <div data-cid="15657671">
-                    <div class="review-item" id="#">
-                        <div class="subject-img">
-                            <a href="detail.jsp"> <img src="images/pic1.jpg" class="img-responsive" alt=""/> </a>
-                            <div class="captionme">
-                                <ul class="list_3">
-                                    <li><i class="icon5"> </i>
-                                        <p>3,548</p></li>
-                                </ul>
+                <div class="center">
+
+                    <!-- put 3 pictures in another div to style pictures -->
+                    <div class="top3" >
+                        <div class="box">
+                            <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
+                            <a href="#"> <img src="../images/book2.jpg" alt="Mindful"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Ttile</b></p>
+                                <p class="price"><b>€Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
                             </div>
                         </div>
-
-
-                        <div class="main-bd">
-
-                            <header class="main-hd">
-                                <h2>NAME</h2>
-                            </header>
-
-                            <header class="main-hd">
-                                <a href="#" class="avator">
-                                    <img width="24" height="24" src="https://img3.doubanio.com/icon/u183293845-17.jpg">
-                                </a>
-
-                                <a href="#" class="name">&nbsp;&nbsp;account name</a>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;Rating : &nbsp;&nbsp;<img src="images/rating1.png" alt=""/>
-                                </p>
-
-
-                            </header>
-
-                            <h2>
-                                <a href="#">title</a>
-                            </h2>
-
-                            <div class="review-short">
-                                <div class="short-content">
-
-                                    种自己的花，爱自己的宇宙
-                                    你身边有扎斯林群体吗？组织是否已被邪教徒渗透？小心这些极端的影迷，敬而远之就对了。相信我，扎斯林不是单个领域的化身，他们无处不在！也许我就是其中一位，所以你们打差评分明就是在迫害我扎哥哥好不好，哈哈～玩笑点到为止，让我们言归正传。本...
-
-                                    种自己的花，爱自己的宇宙
-                                    你身边有扎斯林群体吗？组织是否已被邪教徒渗透？小心这些极端的影迷，敬而远之就对了。相信我，扎斯林不是单个领域的化身，他们无处不在！也许我就是其中一位，所以你们打差评分明就是在迫害我扎哥哥好不好，哈哈～玩笑点到为止，让我们言归正传。本...
-
-                                </div>
+                        <div class="box">
+                            <a href="#"> <img src="../images/book3.jpg" alt="Ttile"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Ttile</b></p>
+                                <p class="price"><b>€Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <a href="#"> <img src="../images/book4.jpg" alt="Eugene"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Ttile</b></p>
+                                <p class="price"><b>€Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!--***************************************************************	-->
 
                 <!-- reviews div 3***************************************************************	-->
 
-                <div data-cid="15657671">
-                    <div class="review-item" id="15657671">
-                        <div class="subject-img">
-                            <a href="detail.jsp"> <img src="images/pic1.jpg" class="img-responsive" alt=""/> </a>
-                            <div class="captionme">
-                                <ul class="list_3">
-                                    <li><i class="icon5"> </i>
-                                        <p>3,548</p></li>
-                                </ul>
+                <div class="center">
+
+                    <!-- put 3 pictures in another div to style pictures -->
+                    <div class="top3" >
+                        <div class="box">
+                            <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
+                            <a href="#"> <img src="../images/book2.jpg" alt="Mindful"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Ttile</b></p>
+                                <p class="price"><b>€Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
                             </div>
                         </div>
-
-
-                        <div class="main-bd">
-
-                            <header class="main-hd">
-                                <h2>NAME</h2>
-                            </header>
-
-                            <header class="main-hd">
-                                <a href="#" class="avator">
-                                    <img width="24" height="24" src="https://img3.doubanio.com/icon/u183293845-17.jpg">
-                                </a>
-
-                                <a href="#" class="name">&nbsp;&nbsp;account name</a>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;Rating : &nbsp;&nbsp;<img src="images/rating1.png" alt=""/>
-                                </p>
-
-
-                            </header>
-
-                            <h2>
-                                <a href="#">title</a>
-                            </h2>
-
-                            <div id="review_15657671_short" class="review-short" data-rid="#">
-                                <div class="short-content">
-
-                                    种自己的花，爱自己的宇宙
-                                    你身边有扎斯林群体吗？组织是否已被邪教徒渗透？小心这些极端的影迷，敬而远之就对了。相信我，扎斯林不是单个领域的化身，他们无处不在！也许我就是其中一位，所以你们打差评分明就是在迫害我扎哥哥好不好，哈哈～玩笑点到为止，让我们言归正传。本...
-
-                                </div>
+                        <div class="box">
+                            <a href="#"> <img src="../images/book3.jpg" alt="Ttile"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Ttile</b></p>
+                                <p class="price"><b>€Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <a href="#"> <img src="../images/book4.jpg" alt="Eugene"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Ttile</b></p>
+                                <p class="price"><b>€Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- reviews div 4***************************************************************	-->
+
+                <div class="center">
+
+                    <!-- put 3 pictures in another div to style pictures -->
+                    <div class="top3" id="bestsellers">
+                        <div class="box">
+                            <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
+                            <a href="#"> <img src="../images/book2.jpg" alt="Mindful"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Ttile</b></p>
+                                <p class="price"><b>€Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <a href="#"> <img src="../images/book3.jpg" alt="Ttile"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Ttile</b></p>
+                                <p class="price"><b>€Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <a href="#"> <img src="../images/book4.jpg" alt="Eugene"></a>
+                            <div class="vertical">
+                                <p class="bookname"><b>Ttile</b></p>
+                                <p class="price"><b>€Year</b></p>
+                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!--pages***************************************************************	-->
                 <!--
