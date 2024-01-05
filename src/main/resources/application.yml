@@ -16,7 +16,7 @@ spring:
 server:
   port: 8080
   servlet:
-    context-path: /FilmReview #project name
+    #context-path: /FilmReview #project name
     jsp:
       init-parameters:
         development: true

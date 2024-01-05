@@ -4,10 +4,12 @@ import com.nci.filmreview.entity.Review;
 import com.nci.filmreview.entity.User;
 import com.nci.filmreview.service.UserService;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,13 +26,21 @@ public class UserController {
     private UserService userService;
 
 
+    @GetMapping("/loginPage")
+    public String loginPage(){
+        return "login";
+    }
+
+
+
+
     /**
      * user login
      *
      * @return
      */
     @PostMapping("/login")          //HttpSession session
-    public String login(@ModelAttribute User user, Model model) {
+    public String login(@ModelAttribute User user, Model model, HttpSession session) {
         log.debug("email:{},password:{}", user.getEmail(), user.getPassword());
         //1.find the account by email
         try {
@@ -39,6 +49,7 @@ public class UserController {
 
             //store user info
             model.addAttribute("user", user);
+            session.setAttribute("user", user);
 
             //store user login getMessage()tokens
             //session.setAttribute("user", user);
@@ -49,7 +60,7 @@ public class UserController {
 
         }
 
-        return "redirect:/index.jsp";
+        return "redirect:/index";
     }
 
     /**

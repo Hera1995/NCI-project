@@ -1,5 +1,6 @@
 package com.nci.filmreview.api;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.nci.filmreview.api.dot.AiAccessTokenDto;
 import com.nci.filmreview.api.dot.AiDto;
 import com.nci.filmreview.api.dot.AiReqDto;
@@ -15,6 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.text.SimpleDateFormat;
 
+import static org.springframework.http.HttpMethod.GET;
 import static org.springframework.web.util.UriComponentsBuilder.fromUriString;
 
 
@@ -33,8 +35,8 @@ public class AiApi {
     public void getAiAccessToken() {
         UriComponentsBuilder builder = fromUriString("https://aip.baidubce.com/oauth/2.0/token")
                 .queryParam("grant_type", "client_credentials")
-                .queryParam("client_id", "x5ElkR5OBBSRZbyDMm0dIYvL")
-                .queryParam("client_secret", "F2aAk53KPLTWQjY7T2G3C2HEnKb05Yuq");
+                .queryParam("client_id", "a0NesLUiBOOhVgPiIARAvlBv")
+                .queryParam("client_secret", "lbygtfg6IGI3vLC5GKBSZU5cYhwI1aUQ");
 
         // Request for access token
         ResponseEntity<AiAccessTokenDto> response = restTemplate.getForEntity(builder.toUriString(), AiAccessTokenDto.class);
@@ -61,5 +63,19 @@ public class AiApi {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return new AiResDto(aiDto.getResult(), dateFormat.format(aiDto.getCreated()));
+    }
+
+    public JsonNode getMovieList(String movieName, int page) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("X-RapidAPI-Key", "e11c008809mshb7e6a4b894f85dfp1895ddjsnf16c307d942d");
+        headers.set("X-RapidAPI-Host", "movie-database-alternative.p.rapidapi.com");
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        UriComponentsBuilder builder = fromUriString("https://movie-database-alternative.p.rapidapi.com")
+                .queryParam("s", movieName)
+                .queryParam("r", "json")
+                .queryParam("page", page);
+        ResponseEntity<JsonNode> response = restTemplate.exchange(builder.toUriString(), GET, entity, JsonNode.class);
+
+        return response.getBody();
     }
 }
