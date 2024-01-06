@@ -51,18 +51,19 @@ public class AiApi {
 
         // Get answer from AI
         UriComponentsBuilder builder = fromUriString("https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/eb-instant").queryParam("access_token", accessToken);
-        ResponseEntity<AiDto> response = restTemplate.postForEntity(builder.toUriString(), requestEntity, AiDto.class);
-        AiDto aiDto = response.getBody();
+        ResponseEntity<JsonNode> response = restTemplate.postForEntity(builder.toUriString(), requestEntity, JsonNode.class);
+        //AiDto aiDto = response.getBody();
+        JsonNode jsonNode = response.getBody();
 
         // If access token expired, request again
-        if (aiDto == null || aiDto.getResult() == null) {
+        if (jsonNode == null || jsonNode.get("result") == null) {
             getAiAccessToken();
-            response = restTemplate.postForEntity(builder.toUriString(), requestEntity, AiDto.class);
-            aiDto = response.getBody();
+            response = restTemplate.postForEntity(builder.toUriString(), requestEntity, JsonNode.class);
+            jsonNode = response.getBody();
         }
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return new AiResDto(aiDto.getResult(), dateFormat.format(aiDto.getCreated()));
+        return new AiResDto(jsonNode.get("result").toString(), dateFormat.format(jsonNode.get("created").longValue()));
     }
 
     public JsonNode getMovieList(String movieName, int page) {

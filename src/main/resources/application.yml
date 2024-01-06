@@ -15,11 +15,6 @@ spring:
 
 server:
   port: 8080
-  servlet:
-    #context-path: /FilmReview #project name
-    jsp:
-      init-parameters:
-        development: true
 
 mybatis:
   mapper-locations: classpath:com/nci/filmreview/mapper/*.xml

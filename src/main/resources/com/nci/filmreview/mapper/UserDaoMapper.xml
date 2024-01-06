@@ -1,19 +1,26 @@
-<?xml version="1.0" encoding="utf-8" ?><!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.nci.filmreview.dao.UserDao">
 
     <!-- search user based on email java.lang.String-->
     <select id="findByEmail" parameterType="java.lang.String" resultType="com.nci.filmreview.entity.User">
         select *
-        from User
+        from user
         where email = #{email}
     </select>
 
     <!--user register   useGeneratedKeys="true" keyProperty="id"-->
-    <insert id="save" parameterType="com.nci.filmreview.entity.User" >
-        insert into User
-        values ( #{id}, #{email}, #{fName}, #{lName}, #{password}, #{type})
+    <insert id="save" parameterType="com.nci.filmreview.entity.User" useGeneratedKeys="true" keyProperty="id">
+        insert into user(email, first_name, last_name, password, type)
+        values (#{email}, #{firstName}, #{lastName}, #{password}, #{type})
     </insert>
+
+    <!--    check reviews related to current movie-->
+    <select id="list" resultType="com.nci.filmreview.entity.Review">
+        select *
+        from review
+        where imdb_id = #{imdbId}
+    </select>
 </mapper>
 

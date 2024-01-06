@@ -14,5 +14,5 @@ public interface UserService {
     User login(String email, String password);
 
     //list reviews
-    List<Review> list();
+    List<Review> list(String imdbId);
 }

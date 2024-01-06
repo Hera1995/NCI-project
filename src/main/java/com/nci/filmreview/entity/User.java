@@ -8,16 +8,16 @@ import jakarta.persistence.*;
 public class User {
     //data members
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String email;
-    private String fName;
-    private String lName;
+    private String firstName;
+    private String lastName;
     private String password;
     private Boolean type;
 
-
     //setters and getters
+
     public Integer getId() {
         return id;
     }
@@ -34,20 +34,20 @@ public class User {
         this.email = email;
     }
 
-    public String getfName() {
-        return fName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getlName() {
-        return lName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {
@@ -58,11 +58,11 @@ public class User {
         this.password = password;
     }
 
-    public boolean isType() {
+    public Boolean getType() {
         return type;
     }
 
-    public void setType(boolean type) {
+    public void setType(Boolean type) {
         this.type = type;
     }
 }

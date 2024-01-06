@@ -5,7 +5,6 @@ import com.nci.filmreview.entity.Review;
 import com.nci.filmreview.entity.User;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.ObjectUtils;
 
@@ -13,16 +12,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Service
-@Transactional
 public class UserServiceImpl implements UserService {
 
     @Resource
     private UserDao userDao;
-
-/*    @Autowired
-    public UserServiceImpl(UserDao userDao) {
-        this.userDao = userDao;
-    }*/
 
     @Override
     public void register(User user) {
@@ -61,7 +54,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<Review> list() {
-        return this.userDao.list();
+    public List<Review> list(String imdbId) {
+        return userDao.list(imdbId);
     }
 }

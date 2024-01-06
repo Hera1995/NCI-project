@@ -47,7 +47,8 @@ function aiRequest() {
         data: JSON.stringify(requestData),
         contentType: 'application/json',
         success: function (response) {
-            $('#ai-answer').html(response.text.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'));
+            // $('#ai-answer').html(response.text.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'));
+            $('#ai-answer').html(response.text.replace(/\\\\/g, "\\").replace(/\\n/g, "<br>"));
             // get response
             console.log('get response successfully:', response);
         },
@@ -102,7 +103,7 @@ function movieArrange(list) {
 
         $.each(group, function (i, item) {
             let $boxDiv = $('<div class="box"></div>');
-            let $link = $('<a href="/detail?movieId=' + item.imdbID + '&title=' + item.Title + '&time=' + item.Year + '&imgUrl=' + item.Poster + '"></a>');
+            let $link = $('<a href="'+ window.location.origin + '/detail?movieId=' + item.imdbID + '&title=' + item.Title + '&time=' + item.Year + '&imgUrl=' + item.Poster + '"></a>');
             let $img = $('<img src="' + item.Poster + '" alt="' + item.Title + '">');
             let $verticalDiv = $('<div class="vertical"></div>');
             let $titleP = $('<p class="bookname"><b>' + item.Title + '</b></p>');

@@ -15,5 +15,5 @@ public interface UserDao {
     void save(User user);
 
     //list all reviews
-    List<Review> list();
+    List<Review> list(String imdbId);
 }

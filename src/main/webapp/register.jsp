@@ -1,5 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <!DOCTYPE HTML>
 <html>
@@ -63,11 +64,11 @@
 
                         <div>
                             <span>First Name<label>*</label></span>
-                            <input type="text" name="fName" required="required">
+                            <input type="text" name="firstName" required="required">
                         </div>
                         <div>
                             <span>Last Name<label>*</label></span>
-                            <input type="text" name="lName" required="required">
+                            <input type="text" name="lastName" required="required">
                         </div>
                         <div>
                             <span>Email Address<label>*</label></span>

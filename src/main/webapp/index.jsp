@@ -28,9 +28,9 @@
                 <h1 class="m_2">Classics</h1>
                 <div class="search">
                     <%--<form>--%>
-                        <input id="movie-name" type="text" placeholder="Search..." <%--onFocus="this.value='';"--%>
-                        <%--onBlur="if (this.value == '') {this.value ='';}"--%> />
-                        <button id="movie-search" type="submit" value=""></button>
+                    <input id="movie-name" type="text" placeholder="Search..." <%--onFocus="this.value='';"--%>
+                    <%--onBlur="if (this.value == '') {this.value ='';}"--%> />
+                    <button id="movie-search" type="submit" value=""></button>
                     <%--</form>--%>
                 </div>
                 <div class="clearfix"></div>
@@ -45,7 +45,9 @@
                     <div class="top3">
                         <div class="box">
                             <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
-                            <div><a href="detail.jsp"> <img src="../images/book2.jpg" alt="Mindful"></a></div>
+                            <div>
+                                <a href="${pageContext.request.contextPath}/detail?movieId=tt0244970&title=Someone Like You&time=2001&imgUrl=https://m.media-amazon.com/images/M/MV5BOWE0NzI4YjUtY2NhNy00NWQ2LThiZTUtMDJjYWY5YTEzYTFiXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg">
+                                    <img src="https://m.media-amazon.com/images/M/MV5BOWE0NzI4YjUtY2NhNy00NWQ2LThiZTUtMDJjYWY5YTEzYTFiXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg" alt="Mindful"></a></div>
                             <div class="vertical">
                                 <p class="bookname"><b>Title</b></p>
                                 <p class="price"><b>Year</b></p>

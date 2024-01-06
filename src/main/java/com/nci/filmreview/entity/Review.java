@@ -11,9 +11,9 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Integer userID;
+    private Integer userId;
 
-    private String imdbID;
+    private String imdbId;
 
     @Temporal(TemporalType.DATE)
     private Date date;
@@ -25,15 +25,16 @@ public class Review {
     public Review() {
     }
 
-    public Review(Integer id, Integer userID, String imdbID, Date date, String content) {
+    public Review(Integer id, Integer userId, String imdbId, Date date, String content) {
         this.id = id;
-        this.userID = userID;
-        this.imdbID = imdbID;
+        this.userId = userId;
+        this.imdbId = imdbId;
         this.date = date;
         this.content = content;
     }
 
     //getters and setters
+
     public Integer getId() {
         return id;
     }
@@ -42,20 +43,20 @@ public class Review {
         this.id = id;
     }
 
-    public Integer getUserID() {
-        return userID;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserID(Integer userID) {
-        this.userID = userID;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getImdbID() {
-        return imdbID;
+    public String getImdbId() {
+        return imdbId;
     }
 
-    public void setImdbID(String imdbID) {
-        this.imdbID = imdbID;
+    public void setImdbId(String imdbId) {
+        this.imdbId = imdbId;
     }
 
     public Date getDate() {

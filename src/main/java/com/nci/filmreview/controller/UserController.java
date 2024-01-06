@@ -1,6 +1,5 @@
 package com.nci.filmreview.controller;
 
-import com.nci.filmreview.entity.Review;
 import com.nci.filmreview.entity.User;
 import com.nci.filmreview.service.UserService;
 import jakarta.annotation.Resource;
@@ -9,12 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -24,7 +20,6 @@ public class UserController {
 
     @Resource
     private UserService userService;
-
 
 
     /**
@@ -66,7 +61,7 @@ public class UserController {
     @PostMapping("/register")
     public String register(@ModelAttribute User user) {
         log.debug("email:{}, first name:{}, last name:{}, password:{}",
-                user.getEmail(), user.getfName(), user.getlName(), user.getPassword());
+                user.getEmail(), user.getFirstName(), user.getLastName(), user.getPassword());
         try {
             userService.register(user);
         } catch (RuntimeException e) {
@@ -74,16 +69,16 @@ public class UserController {
             return "redirect:/register.jsp?msg=" + e.getMessage();
         }
 
-        return "redirect:/login.jsp";
+        return "redirect:/loginPage";
     }
 
 
-    @RequestMapping("review")
+    @RequestMapping("/detail")
     public String ListReviews(Model model) {
         //get list
-        List<Review> reviews = userService.list();
+//        List<Review> reviews = userService.list();
 
-        model.addAttribute("reviews", reviews);
+//        model.addAttribute("reviews", reviews);
         return "detail";
     }
 }
