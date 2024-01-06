@@ -1723,7 +1723,7 @@ h2.m_3 {
 	width: 48%;
 }
 }
-
+/*************************my css*********************************/
 /****************************************************************/
 /************************ index *********************************/
 
@@ -1886,7 +1886,7 @@ h2.m_3 {
 /* .box::before { */
   /* content: ""; */
   /* display: block; */
-  /* padding-top: 70%; /* 1:1 比例占位符 */ */
+  /* padding-top: 70%;*/
 /* } */
 
 /* .box img { */
@@ -1950,3 +1950,21 @@ h2.m_3 {
 	}
 }
 
+/*******************detail**********************/
+.detail-info{
+	padding: 10px;
+}
+
+.comment-textarea {
+	width: 100%;
+	font-size: 1.1em;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	border: none;
+	color: #999;
+	outline: none;
+	background: #fff;
+	height: 120px;
+	padding: 10px;
+	resize: none;
+}
