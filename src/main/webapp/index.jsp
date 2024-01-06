@@ -25,12 +25,12 @@
 
         <div class="content">
             <div class="box_1">
-                <h1 class="m_2">Top Movies</h1>
+                <h1 class="m_2">Classics</h1>
                 <div class="search">
                     <%--<form>--%>
-                        <input id="movie-name" type="text" value="Search..." <%--onFocus="this.value='';"--%>
+                        <input id="movie-name" type="text" placeholder="Search..." <%--onFocus="this.value='';"--%>
                         <%--onBlur="if (this.value == '') {this.value ='';}"--%> />
-                        <button id="movie-search" type="submit" value="">search</button>
+                        <button id="movie-search" type="submit" value=""></button>
                     <%--</form>--%>
                 </div>
                 <div class="clearfix"></div>
@@ -45,7 +45,7 @@
                     <div class="top3">
                         <div class="box">
                             <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
-                            <a href="detail.jsp"> <img src="../images/book2.jpg" alt="Mindful"></a>
+                            <div><a href="detail.jsp"> <img src="../images/book2.jpg" alt="Mindful"></a></div>
                             <div class="vertical">
                                 <p class="bookname"><b>Title</b></p>
                                 <p class="price"><b>Year</b></p>
@@ -55,19 +55,23 @@
                             </div>
                         </div>
                         <div class="box">
-                            <a href="#"> <img src="../images/book3.jpg" alt="Ttile"></a>
+                            <a href="detail.jsp"> <img src="../images/book3.jpg" alt="Ttile"></a>
                             <div class="vertical">
                                 <p class="bookname"><b>Title</b></p>
                                 <p class="price"><b>Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                                <a href="detail.jsp">
+                                    <button type="button" class="addtobasket">Review</button>
+                                </a>
                             </div>
                         </div>
                         <div class="box">
-                            <a href="#"> <img src="../images/book4.jpg" alt="Eugene"></a>
+                            <a href="detail.jsp"> <img src="../images/book4.jpg" alt="Eugene"></a>
                             <div class="vertical">
                                 <p class="bookname"><b>Title</b></p>
                                 <p class="price"><b>Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                                <a href="detail.jsp">
+                                    <button type="button" class="addtobasket">Review</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -107,7 +111,7 @@
                     </div>
                 </div>
 
-                <!-- reviews div 3***************************************************************	-->
+                <%--<!-- reviews div 3***************************************************************	-->
 
                 <div class="center">
 
@@ -174,7 +178,7 @@
                         </div>
                     </div>
                 </div>
-
+--%>
                 <!--pages***************************************************************	-->
                 <!--
                 <div class="pagination">

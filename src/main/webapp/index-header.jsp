@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <div class="header_top">
-    <div class="col-sm-3 logo"><a href="index.jsp"><img src="images/logo.png" alt="logo"/></a></div>
+    <div class="col-sm-3 logo"><a href="index"><img src="images/logo.png" alt="logo"/></a></div>
     <div class="col-sm-6 nav">
         <ul>
             <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Comedy"><a
@@ -23,7 +23,7 @@
             <li>
                 <c:choose>
                     <c:when test="${empty user}">
-                        <p><a href="login.jsp">Log in</a></p>
+                        <p><a href="loginPage">Log in</a></p>
                     </c:when>
                     <c:otherwise>
                         <p>${user.fName} ${user.lName}</p>

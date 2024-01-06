@@ -26,7 +26,7 @@
 <div class="container">
     <div class="container_wrap">
         <div class="header_top">
-            <div class="col-sm-3 logo"><a href="index.jsp"><img src="images/logo.png" alt=""/></a></div>
+            <div class="col-sm-3 logo"><a href="index"><img src="images/logo.png" alt=""/></a></div>
             <div class="col-sm-6 nav">
                 <ul>
                     <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Comedy"><a
@@ -46,7 +46,16 @@
             <div class="col-sm-3 header_right">
                 <ul class="header_right_box">
                     <li><img src="images/p0.png" alt=""/></li>
-                    <li><p><a href="login.jsp">Log in</a></p></li>
+                    <li>
+                        <c:choose>
+                            <c:when test="${empty user}">
+                                <p><a href="loginPage">Log in</a></p>
+                            </c:when>
+                            <c:otherwise>
+                                <p>${user.fName} ${user.lName}</p>
+                            </c:otherwise>
+                        </c:choose>
+                    </li>
                     <li class="last"><i class="edit"> </i></li>
                     <div class="clearfix"></div>
                 </ul>

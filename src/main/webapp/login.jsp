@@ -19,7 +19,7 @@
 <div class="container">
     <div class="container_wrap">
         <div class="header_top">
-            <div class="col-sm-3 logo"><a href="index.jsp"><img src="images/logo.png" alt=""/></a></div>
+            <div class="col-sm-3 logo"><a href="index"><img src="images/logo.png" alt=""/></a></div>
             <div class="col-sm-6 nav">
                 <ul>
                     <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="Comedy"><a href="#"> </a></span></li>
@@ -33,7 +33,7 @@
             <div class="col-sm-3 header_right">
                 <ul class="header_right_box">
                     <li><img src="images/p0.png" alt=""/></li>
-                    <li><p><a href="login.jsp">Log in</a></p></li>
+                    <li><p><a href="loginPage">Log in</a></p></li>
                     <li class="last"><i class="edit"> </i></li>
                     <div class="clearfix"> </div>
                 </ul>
@@ -45,7 +45,7 @@
                 <div class="col-md-6 login-left">
                     <h3>New Customers</h3>
                     <p>By creating an account with us, you'll effortlessly save your browsing history and conveniently respond to messages.</p>
-                    <a class="acount-btn" href="register.jsp">Create an Account</a>
+                    <a class="acount-btn" href="registerPage">Create an Account</a>
                 </div>
                 <div class="col-md-6 login-right">
                     <h3>Registered Customers</h3>

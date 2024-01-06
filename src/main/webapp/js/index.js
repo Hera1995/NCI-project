@@ -30,7 +30,7 @@ function aiRequest() {
         return;
     }
 
-    // 构建要发送的数据对象，与后端 API 所需的数据格式一致
+    // data object
     const requestData = {
         "messages": [
             {
@@ -40,22 +40,21 @@ function aiRequest() {
         ]
     }
 
-    // 发送 AJAX 请求
+    // send AJAX request
     $.ajax({
-        type: 'POST', // 或者 'GET'，取决于后端 API 的要求
-        url: window.location.origin + '/ai', // 这里填写你的后端 API 的端点
-        data: JSON.stringify(requestData), // 将数据转换为 JSON 字符串
-        contentType: 'application/json', // 指定请求内容的类型为 JSON
+        type: 'POST',
+        url: window.location.origin + '/ai',
+        data: JSON.stringify(requestData),
+        contentType: 'application/json',
         success: function (response) {
             $('#ai-answer').html(response.text.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'));
-            // 成功接收到响应后的处理
-            console.log('成功接收到响应:', response);
-            // 在这里你可以处理后端返回的数据，更新页面内容等
+            // get response
+            console.log('get response successfully:', response);
         },
         error: function (xhr, status, error) {
-            // 请求出错时的处理
-            console.error('请求出错:', error);
-            // 这里你可以处理请求错误，如显示错误信息给用户等
+            // error
+            console.error('request error:', error);
+
         }
     });
 }
@@ -65,23 +64,23 @@ function movieSearch() {
 
     const param = {
         movieName: $('#movie-name').val(),
-        page: 1
+        page: 2
     }
 
     $.ajax({
-        type: 'GET', // 或者 'GET'，取决于后端 API 的要求
-        url: window.location.origin + '/movie', // 这里填写你的后端 API 的端点
+        type: 'GET',
+        url: window.location.origin + '/movie',
         data: param,
-        contentType: 'application/json', // 指定请求内容的类型为 JSON
+        contentType: 'application/json',
         success: function (response) {
-            // 成功接收到响应后的处理
-            console.log('成功接收到响应:', response);
+            // get response
+            console.log('get response successfully:', response);
             movieArrange(response.Search);
         },
         error: function (xhr, status, error) {
-            // 请求出错时的处理
-            console.error('请求出错:', error);
-            // 这里你可以处理请求错误，如显示错误信息给用户等
+            // error
+            console.error('request error:', error);
+
         }
     });
 }
@@ -103,12 +102,12 @@ function movieArrange(list) {
 
         $.each(group, function (i, item) {
             let $boxDiv = $('<div class="box"></div>');
-            let $link = $('<a href="detail.jsp"></a>');
+            let $link = $('<a href="/detail?movieId=' + item.imdbID + '&title=' + item.Title + '&time=' + item.Year + '&imgUrl=' + item.Poster + '"></a>');
             let $img = $('<img src="' + item.Poster + '" alt="' + item.Title + '">');
-            var $verticalDiv = $('<div class="vertical"></div>');
-            var $titleP = $('<p class="bookname"><b>' + item.Title + '</b></p>');
-            var $yearP = $('<p class="price"><b>' + item.Year + '</b></p>');
-            var $reviewButton = $('<button type="button" class="addtobasket" value="' + item.imdbID + '">Review</button>');
+            let $verticalDiv = $('<div class="vertical"></div>');
+            let $titleP = $('<p class="bookname"><b>' + item.Title + '</b></p>');
+            let $yearP = $('<p class="price"><b>' + item.Year + '</b></p>');
+            let $reviewButton = $('<button type="button" class="addtobasket" value="' + item.imdbID + '">Review</button>');
 
             $link.append($img);
             $boxDiv.append($link);
