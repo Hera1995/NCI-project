@@ -26,7 +26,7 @@
                         <p><a href="loginPage">Log in</a></p>
                     </c:when>
                     <c:otherwise>
-                        <p>${user.fName} ${user.lName}</p>
+                        <p>${user.firstName} ${user.lastName}</p>
                     </c:otherwise>
                 </c:choose>
             </li>

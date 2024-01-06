@@ -23,6 +23,16 @@ public class PageController {
 
         return "index";
     }
+    
+    @GetMapping("/loginPage")
+    public String loginPage() {
+        return "login";
+    }
+
+    @GetMapping("/registerPage")
+    public String registerPage() {
+        return "register";
+    }
 
     @GetMapping("/detail")
     public String movieDetail(@RequestParam String movieId, @RequestParam String title, @RequestParam String time, @RequestParam String imgUrl, Model model) {
@@ -37,15 +47,6 @@ public class PageController {
         return "detail";
     }
 
-    @GetMapping("/loginPage")
-    public String loginPage() {
-        return "login";
-    }
-
-    @GetMapping("/registerPage")
-    public String registerPage() {
-        return "register";
-    }
 
 
 }

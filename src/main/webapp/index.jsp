@@ -49,11 +49,9 @@
                                 <a href="${pageContext.request.contextPath}/detail?movieId=tt0244970&title=Someone Like You&time=2001&imgUrl=https://m.media-amazon.com/images/M/MV5BOWE0NzI4YjUtY2NhNy00NWQ2LThiZTUtMDJjYWY5YTEzYTFiXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg">
                                     <img src="https://m.media-amazon.com/images/M/MV5BOWE0NzI4YjUtY2NhNy00NWQ2LThiZTUtMDJjYWY5YTEzYTFiXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg" alt="Mindful"></a></div>
                             <div class="vertical">
-                                <p class="bookname"><b>Title</b></p>
-                                <p class="price"><b>Year</b></p>
-                                <a href="detail.jsp">
-                                    <button type="button" class="addtobasket">Review</button>
-                                </a>
+                                <p class="bookname"><b>Someone Like You</b></p>
+                                <p class="price"><b>2001</b></p>
+
                             </div>
                         </div>
                         <div class="box">
@@ -61,9 +59,7 @@
                             <div class="vertical">
                                 <p class="bookname"><b>Title</b></p>
                                 <p class="price"><b>Year</b></p>
-                                <a href="detail.jsp">
-                                    <button type="button" class="addtobasket">Review</button>
-                                </a>
+
                             </div>
                         </div>
                         <div class="box">
@@ -71,9 +67,7 @@
                             <div class="vertical">
                                 <p class="bookname"><b>Title</b></p>
                                 <p class="price"><b>Year</b></p>
-                                <a href="detail.jsp">
-                                    <button type="button" class="addtobasket">Review</button>
-                                </a>
+
                             </div>
                         </div>
                     </div>

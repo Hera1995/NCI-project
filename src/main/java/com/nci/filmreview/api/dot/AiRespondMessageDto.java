@@ -1,18 +1,22 @@
 package com.nci.filmreview.api.dot;
 
 
-public class AiResDto {
+public class AiRespondMessageDto {
+    //data members
     private String text;
     private String timestamp;
 
-    public AiResDto() {
+    //constructors
+    public AiRespondMessageDto() {
     }
 
-    public AiResDto(String text, String timestamp) {
+    public AiRespondMessageDto(String text, String timestamp) {
         this.text = text;
         this.timestamp = timestamp;
     }
 
+
+    //setters and getters
     public String getText() {
         return text;
     }

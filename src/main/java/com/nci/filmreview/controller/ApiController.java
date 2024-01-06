@@ -1,9 +1,9 @@
 package com.nci.filmreview.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.nci.filmreview.api.AiApi;
-import com.nci.filmreview.api.dot.AiReqDto;
-import com.nci.filmreview.api.dot.AiResDto;
+import com.nci.filmreview.api.Api;
+import com.nci.filmreview.api.dot.AiRequestMessageDto;
+import com.nci.filmreview.api.dot.AiRespondMessageDto;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.*;
 public class ApiController {
 
     @Resource
-    private AiApi aiApi;
+    private Api api;
 
     @PostMapping("/ai")
-    public AiResDto aiAnswer(@RequestBody AiReqDto aiReqDto) {
-        return aiApi.getAiAnswer(aiReqDto);
+    public AiRespondMessageDto aiAnswer(@RequestBody AiRequestMessageDto aiRequestMessageDto) {
+        return api.getAiAnswer(aiRequestMessageDto);
     }
 
     @GetMapping("/movie")
     public JsonNode getMovieList(@RequestParam String movieName, @RequestParam Integer page) {
-        return aiApi.getMovieList(movieName, page);
+        return api.getMovieList(movieName, page);
     }
 }

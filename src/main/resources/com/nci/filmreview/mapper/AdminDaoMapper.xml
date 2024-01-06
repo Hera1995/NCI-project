@@ -5,7 +5,7 @@
 
     <!--list-->
     <select id="list" resultType="com.nci.filmreview.entity.User">
-        select * from User
+        select * from user
     </select>
 
 

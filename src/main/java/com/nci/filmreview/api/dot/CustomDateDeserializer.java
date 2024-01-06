@@ -9,6 +9,9 @@ import java.util.Date;
 
 
 public class CustomDateDeserializer extends JsonDeserializer<Date> {
+
+    //1. get a long type timestamp from JsonParser
+    //2. multiply the timestamp by 1000 to get the timestamp in milliseconds
     @Override
     public Date deserialize(JsonParser jsonParser, DeserializationContext ctxt) throws IOException {
         long timestamp = jsonParser.getLongValue();

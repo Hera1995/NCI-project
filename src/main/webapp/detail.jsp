@@ -54,7 +54,7 @@
                                 <p><a href="loginPage">Log in</a></p>
                             </c:when>
                             <c:otherwise>
-                                <p>${user.fName} ${user.lName}</p>
+                                <p>${user.firstName} ${user.lastName}</p>
                             </c:otherwise>
                         </c:choose>
                     </li>
@@ -70,23 +70,23 @@
                     <div class="grid images_3_of_2">
                         <div class="movie_image">
 
-                            <img src="${imgUrl}" class="img-responsive" alt=""/>
+                            <img src="${imgUrl}" class="img-responsive" alt="${title}"/>
                         </div>
 
                     </div>
                     <div class="desc1 span_3_of_2">
-                        <div class="detail-info"><p class="movie_option"><strong>Title: </strong>established</p></div>
-                        <div class="detail-info"><p class="movie_option"><strong>Year: </strong>2014</p></div>
-                        <div class="detail-info"><p class="movie_option"><strong>imdbID: </strong>hjhj2014</p></div>
+                        <div class="detail-info"><p class="movie_option"><strong>Title: </strong>${title}</p></div>
+                        <div class="detail-info"><p class="movie_option"><strong>Year: </strong>${time}</p></div>
+                        <div class="detail-info"><p class="movie_option"><strong>imdbID: </strong>${movieId}</p></div>
 
-                        <div class="down_btn detail-info"><a class="btn1" href="#"><span> </span>Review</a></div>
+                        <div class="down_btn detail-info"><a class="btn1" href=#comment><span> </span>Review</a></div>
                     </div>
                     <div class="clearfix"></div>
 
                     <form method="post" action="contact-post.html">
 
                         <div >
-                            <textarea class="comment-textarea" value="Comment" onfocus="this.value = '';"
+                            <textarea class="comment-textarea" value="Comment" id="comment" onfocus="this.value = '';"
                                       onblur="if (this.value == '') {this.value = 'Message';}">Comment here:</textarea>
                         </div>
                         <div class="form-submit1">

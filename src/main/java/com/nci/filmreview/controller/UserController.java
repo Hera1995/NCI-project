@@ -73,12 +73,5 @@ public class UserController {
     }
 
 
-    @RequestMapping("/detail")
-    public String ListReviews(Model model) {
-        //get list
-//        List<Review> reviews = userService.list();
 
-//        model.addAttribute("reviews", reviews);
-        return "detail";
-    }
 }

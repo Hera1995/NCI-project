@@ -3,10 +3,14 @@ package com.nci.filmreview.api.dot;
 import java.util.List;
 
 
-public class AiReqDto {
+public class AiRequestMessageDto {
+
+    //data members
     private List<Entity> messages;
 
+    //a message entity
     public static class Entity {
+        //data members
         private String role;
         private String content;
 
