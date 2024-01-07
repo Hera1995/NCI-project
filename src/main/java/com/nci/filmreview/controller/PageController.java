@@ -1,6 +1,7 @@
 package com.nci.filmreview.controller;
 
 import com.nci.filmreview.entity.Review;
+import com.nci.filmreview.entity.User;
 import com.nci.filmreview.service.UserService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -38,6 +40,18 @@ public class PageController {
     public String movieDetail(@RequestParam String movieId, @RequestParam String title, @RequestParam String time, @RequestParam String imgUrl, Model model) {
         List<Review> reviews = userService.list(movieId);
         model.addAttribute("reviews", reviews);
+
+        //create a new list to save userIds
+        List<User> users = new ArrayList<>();
+
+        //traverse all the reviews to get userIds
+        for (Review review : reviews) {
+            int userId = review.getUserId(); // get the userId of each Review object
+            User user = userService.findUser(userId); //find the user
+            users.add(user); // save the user to users list
+        }
+        model.addAttribute("users", users);
+
 
         model.addAttribute("movieId", movieId);
         model.addAttribute("title", title);

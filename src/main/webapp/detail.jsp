@@ -99,13 +99,16 @@
                         <ul class="single_list">
                             <li>
                                 <div class="preview"></div>
-                                <div class="data">
-                                    <div class="title">Movie / date </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                        euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
-                                        minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                                        aliquip ex ea commodo consequat.</p>
-                                </div>
+
+
+                                <c:forEach var="review" items="${requestScope.reviews}">
+                                    <div class="data">
+                                        <div class="title">${review.userId} / ${review.date}</div>
+                                        <p>${review.content}</p>
+                                    </div>
+                                </c:forEach>
+
+
                                 <div class="clearfix"></div>
                             </li>
                             <li>

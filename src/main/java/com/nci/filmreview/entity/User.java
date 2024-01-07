@@ -17,7 +17,6 @@ public class User {
     private Boolean type;
 
     //setters and getters
-
     public Integer getId() {
         return id;
     }

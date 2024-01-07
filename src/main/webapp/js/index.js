@@ -65,7 +65,7 @@ function movieSearch() {
 
     const param = {
         movieName: $('#movie-name').val(),
-        page: 2
+        page: 1
     }
 
     $.ajax({

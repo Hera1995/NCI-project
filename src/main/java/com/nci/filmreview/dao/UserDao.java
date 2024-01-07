@@ -11,9 +11,12 @@ public interface UserDao {
     //Find user based on email;
     User findByEmail(String email);
 
+    //find user based on userID
+    User findById(int id);
+
     //user register
     void save(User user);
 
-    //list all reviews
+    //list reviews
     List<Review> list(String imdbId);
 }

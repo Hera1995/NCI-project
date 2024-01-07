@@ -25,7 +25,7 @@
 
         <div class="content">
             <div class="box_1">
-                <h1 class="m_2">Classics</h1>
+                <h1 class="m_2">TOP</h1>
                 <div class="search">
                     <%--<form>--%>
                     <input id="movie-name" type="text" placeholder="Search..." <%--onFocus="this.value='';"--%>
@@ -44,32 +44,40 @@
                     <!-- put 3 pictures in another div to style pictures -->
                     <div class="top3">
                         <div class="box">
+                            <a href="${pageContext.request.contextPath}/detail?movieId=tt6878306&title=News of the World&time=2020&imgUrl=https://m.media-amazon.com/images/M/MV5BMDNlNmVlNDItMjE3Yi00ZTA3LWIyOTktNDhhMGFlZjk5ZDQ0XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg">
+                                <img src="https://m.media-amazon.com/images/M/MV5BMDNlNmVlNDItMjE3Yi00ZTA3LWIyOTktNDhhMGFlZjk5ZDQ0XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg" alt="News of the World"></a>
                             <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
-                            <div>
+                            <div class="vertical">
+                                <p class="bookname"><b>News of the World</b></p>
+                                <p class="price"><b>2020</b></p>
+                                <a href="${pageContext.request.contextPath}/detail?movieId=tt6878306&title=News of the World&time=2020&imgUrl=https://m.media-amazon.com/images/M/MV5BMDNlNmVlNDItMjE3Yi00ZTA3LWIyOTktNDhhMGFlZjk5ZDQ0XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg">
+                                <button type="button" class="addtobasket" >Review</button></a>
+
+                            </div>
+                        </div>
+                        <div class="box">
                                 <a href="${pageContext.request.contextPath}/detail?movieId=tt0244970&title=Someone Like You&time=2001&imgUrl=https://m.media-amazon.com/images/M/MV5BOWE0NzI4YjUtY2NhNy00NWQ2LThiZTUtMDJjYWY5YTEzYTFiXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg">
-                                    <img src="https://m.media-amazon.com/images/M/MV5BOWE0NzI4YjUtY2NhNy00NWQ2LThiZTUtMDJjYWY5YTEzYTFiXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg" alt="Mindful"></a></div>
+                                    <img src="https://m.media-amazon.com/images/M/MV5BOWE0NzI4YjUtY2NhNy00NWQ2LThiZTUtMDJjYWY5YTEzYTFiXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg" alt="Someone Like You"></a>
                             <div class="vertical">
                                 <p class="bookname"><b>Someone Like You</b></p>
                                 <p class="price"><b>2001</b></p>
+                                <a href="${pageContext.request.contextPath}/detail?movieId=tt0244970&title=Someone Like You&time=2001&imgUrl=https://m.media-amazon.com/images/M/MV5BOWE0NzI4YjUtY2NhNy00NWQ2LThiZTUtMDJjYWY5YTEzYTFiXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg">
+                                    <button type="button" class="addtobasket">Review</button></a>
 
                             </div>
                         </div>
                         <div class="box">
-                            <a href="detail.jsp"> <img src="../images/book3.jpg" alt="Ttile"></a>
+                            <a href="${pageContext.request.contextPath}/detail?movieId=tt9418812&title=Hello World&time=2019&imgUrl=https://m.media-amazon.com/images/M/MV5BOGIwYjZlOTctZTNhOC00OTdiLWI5ZWItOTdiMWRjMjUwMDlhXkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_SX300.jpg">
+                                <img src="https://m.media-amazon.com/images/M/MV5BOGIwYjZlOTctZTNhOC00OTdiLWI5ZWItOTdiMWRjMjUwMDlhXkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_SX300.jpg" alt="Hello World"></a>
                             <div class="vertical">
-                                <p class="bookname"><b>Title</b></p>
-                                <p class="price"><b>Year</b></p>
+                                <p class="bookname"><b>Hello World</b></p>
+                                <p class="price"><b>2019</b></p>
+                                <a href="${pageContext.request.contextPath}/detail?movieId=tt9418812&title=Hello World&time=2019&imgUrl=https://m.media-amazon.com/images/M/MV5BOGIwYjZlOTctZTNhOC00OTdiLWI5ZWItOTdiMWRjMjUwMDlhXkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_SX300.jpg">
+                                    <button type="button" class="addtobasket" >Review</button></a>
 
                             </div>
                         </div>
-                        <div class="box">
-                            <a href="detail.jsp"> <img src="../images/book4.jpg" alt="Eugene"></a>
-                            <div class="vertical">
-                                <p class="bookname"><b>Title</b></p>
-                                <p class="price"><b>Year</b></p>
 
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -80,101 +88,42 @@
                     <!-- put 3 pictures in another div to style pictures -->
                     <div class="top3">
                         <div class="box">
-                            <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
-                            <a href="#"> <img src="../images/book2.jpg" alt="Mindful"></a>
+                            <a href="${pageContext.request.contextPath}/detail?movieId=tt2382320&title=No Time to Die&time=2021&imgUrl=https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX300.jpg">
+                                <img src="https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX300.jpg" alt="No Time to Die"></a>
                             <div class="vertical">
-                                <p class="bookname"><b>Ttile</b></p>
-                                <p class="price"><b>€Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                                <p class="bookname"><b>No Time to Die</b></p>
+                                <p class="price"><b>2021</b></p>
+                                <a href="${pageContext.request.contextPath}/detail?movieId=tt2382320&title=No Time to Die&time=2021&imgUrl=https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX300.jpg">
+                                    <button type="button" class="addtobasket">Review</button></a>
+
                             </div>
                         </div>
                         <div class="box">
-                            <a href="#"> <img src="../images/book3.jpg" alt="Ttile"></a>
+                            <a href="${pageContext.request.contextPath}/detail?movieId=tt10311932&title=Someone Has to Die&time=2020&imgUrl=https://m.media-amazon.com/images/M/MV5BYjUyYzZhZGUtMjVlOC00YjRkLWFjYTctNWFlZTgwOTE3YjliXkEyXkFqcGdeQXVyMjUxMTY3ODM@._V1_SX300.jpg">
+                                <img src="https://m.media-amazon.com/images/M/MV5BYjUyYzZhZGUtMjVlOC00YjRkLWFjYTctNWFlZTgwOTE3YjliXkEyXkFqcGdeQXVyMjUxMTY3ODM@._V1_SX300.jpg" alt="Someone Has to Die"></a>
                             <div class="vertical">
-                                <p class="bookname"><b>Ttile</b></p>
-                                <p class="price"><b>€Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                                <p class="bookname"><b>Someone Has to Die</b></p>
+                                <p class="price"><b>2020</b></p>
+                                <a href="${pageContext.request.contextPath}/detail?movieId=tt10311932&title=Someone Has to Die&time=2020&imgUrl=https://m.media-amazon.com/images/M/MV5BYjUyYzZhZGUtMjVlOC00YjRkLWFjYTctNWFlZTgwOTE3YjliXkEyXkFqcGdeQXVyMjUxMTY3ODM@._V1_SX300.jpg">
+                                    <button type="button" class="addtobasket">Review</button></a>
+
                             </div>
                         </div>
                         <div class="box">
-                            <a href="#"> <img src="../images/book4.jpg" alt="Eugene"></a>
+                            <a href="${pageContext.request.contextPath}/detail?movieId=tt1175709&title=All Good Things&time=2010&imgUrl=https://m.media-amazon.com/images/M/MV5BMTcwMjIyMTc2Nl5BMl5BanBnXkFtZTcwOTQyMzc5Mw@@._V1_SX300.jpg">
+                                <img src="https://m.media-amazon.com/images/M/MV5BMTcwMjIyMTc2Nl5BMl5BanBnXkFtZTcwOTQyMzc5Mw@@._V1_SX300.jpg" alt="All Good Things"></a>
                             <div class="vertical">
-                                <p class="bookname"><b>Ttile</b></p>
-                                <p class="price"><b>€Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
+                                <p class="bookname"><b>All Good Things</b></p>
+                                <p class="price"><b>2010</b></p>
+                                <a href="${pageContext.request.contextPath}/detail?movieId=tt1175709&title=All Good Things&time=2010&imgUrl=https://m.media-amazon.com/images/M/MV5BMTcwMjIyMTc2Nl5BMl5BanBnXkFtZTcwOTQyMzc5Mw@@._V1_SX300.jpg">
+                                    <button type="button" class="addtobasket">Review</button></a>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <%--<!-- reviews div 3***************************************************************	-->
 
-                <div class="center">
-
-                    <!-- put 3 pictures in another div to style pictures -->
-                    <div class="top3">
-                        <div class="box">
-                            <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
-                            <a href="#"> <img src="../images/book2.jpg" alt="Mindful"></a>
-                            <div class="vertical">
-                                <p class="bookname"><b>Ttile</b></p>
-                                <p class="price"><b>€Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <a href="#"> <img src="../images/book3.jpg" alt="Ttile"></a>
-                            <div class="vertical">
-                                <p class="bookname"><b>Ttile</b></p>
-                                <p class="price"><b>€Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <a href="#"> <img src="../images/book4.jpg" alt="Eugene"></a>
-                            <div class="vertical">
-                                <p class="bookname"><b>Ttile</b></p>
-                                <p class="price"><b>€Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- reviews div 4***************************************************************	-->
-
-                <div class="center">
-
-                    <!-- put 3 pictures in another div to style pictures -->
-                    <div class="top3" id="bestsellers">
-                        <div class="box">
-                            <!-- put every picture and an "Review" button in a span to make these 2 elements vertical -->
-                            <a href="#"> <img src="../images/book2.jpg" alt="Mindful"></a>
-                            <div class="vertical">
-                                <p class="bookname"><b>Ttile</b></p>
-                                <p class="price"><b>€Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <a href="#"> <img src="../images/book3.jpg" alt="Ttile"></a>
-                            <div class="vertical">
-                                <p class="bookname"><b>Ttile</b></p>
-                                <p class="price"><b>€Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <a href="#"> <img src="../images/book4.jpg" alt="Eugene"></a>
-                            <div class="vertical">
-                                <p class="bookname"><b>Ttile</b></p>
-                                <p class="price"><b>€Year</b></p>
-                                <button type="button" class="addtobasket" onclick="itemAdded()">Review</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
---%>
                 <!--pages***************************************************************	-->
                 <!--
                 <div class="pagination">

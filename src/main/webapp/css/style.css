@@ -1861,18 +1861,7 @@ h2.m_3 {
 	justify-content: space-between;
 }
 
-.box {
-	width: 33.33%;
-	padding: 10px;
-	box-sizing: border-box;
-	text-align: center;
-}
 
-.box img {
-	max-width: 100%;
-	height: 75%;
-	object-fit: cover;
-}
 
 /* .box { */
   /* width: 33.33%; */
@@ -1906,7 +1895,7 @@ h2.m_3 {
 
 .box p {
 	font-size: 15px;
-	font-family: Arial;
+	font-family: Arial, serif;
 	padding: 2px;
 }
 
@@ -1937,6 +1926,18 @@ h2.m_3 {
 	color: black;
 }
 
+.box {
+	width: 33.33%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.box img {
+	max-width: 100%;
+	height: 75%;
+	object-fit: cover;
+}
 @media screen and (max-width: 980px){
 
 	.box {

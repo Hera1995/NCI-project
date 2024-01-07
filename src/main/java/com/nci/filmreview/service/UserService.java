@@ -15,4 +15,7 @@ public interface UserService {
 
     //list reviews
     List<Review> list(String imdbId);
+
+    //find the user
+    User findUser(int id);
 }

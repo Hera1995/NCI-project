@@ -57,4 +57,11 @@ public class UserServiceImpl implements UserService {
     public List<Review> list(String imdbId) {
         return userDao.list(imdbId);
     }
+
+    //find user by Id
+    @Override
+    public User findUser(int id) {
+        return userDao.findById(id);
+    }
+
 }

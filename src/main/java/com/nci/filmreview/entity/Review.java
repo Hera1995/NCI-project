@@ -7,6 +7,8 @@ import java.util.Date;
 @Entity
 @Table//(name = "Review")
 public class Review {
+
+    //data members
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

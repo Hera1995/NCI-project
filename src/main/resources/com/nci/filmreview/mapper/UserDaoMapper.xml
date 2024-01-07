@@ -10,6 +10,13 @@
         where email = #{email}
     </select>
 
+    <!--search user based on id -->
+    <select id="findById" parameterType="int" resultType="com.nci.filmreview.entity.User">
+        select *
+        from user
+        where id = #{id}
+    </select>
+
     <!--user register   useGeneratedKeys="true" keyProperty="id"-->
     <insert id="save" parameterType="com.nci.filmreview.entity.User" useGeneratedKeys="true" keyProperty="id">
         insert into user(email, first_name, last_name, password, type)
