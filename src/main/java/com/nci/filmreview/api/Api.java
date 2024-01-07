@@ -63,7 +63,7 @@ public class Api {
             jsonNode = response.getBody();
         }
 
-        //formats the response content and timestamp
+        //forJmats the response content and timestamp
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return new AiRespondMessageDto(jsonNode.get("result").toString(), dateFormat.format(jsonNode.get("created").longValue()));
     }

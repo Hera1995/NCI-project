@@ -2,6 +2,7 @@ package com.nci.filmreview.controller;
 
 import com.nci.filmreview.entity.User;
 import com.nci.filmreview.service.AdminService;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import java.util.List;
 @RequestMapping("/admin")
 public class AdminController {
 
+    @Resource
     private AdminService adminService;
 
     @Autowired

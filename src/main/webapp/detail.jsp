@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
@@ -10,17 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="Movie, Review, Movie Review, Film, Film Review"/>
-    <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- start plugins -->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <%--<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>--%>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/detail.js"></script>
     <link href='http://fonts.useso.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet'
           type='text/css'>
 </head>
@@ -84,20 +78,21 @@
                     <div class="clearfix"></div>
 
                     <%--*************************** form ********************************--%>
-                    <form method="post" action="${pageContext.request.contextPath}/user/addReview">
+                    <%--<form method="post" action="${pageContext.request.contextPath}/user/addReview">--%>
 
-                        <p class="error-alarm">${param.msg}</p>
-                        <div >
-                            <label for="comment"></label>
-                            <textarea class="comment-textarea" id="comment" name="content"
-                            onfocus="this.value = '';"onblur="if (this.value == '') {this.value = 'Comment here:';}">
+
+                    <div>
+                        <label for="comment"></label>
+                        <textarea class="comment-textarea" id="comment" name="content"
+                                  onfocus="this.value = '';"
+                                  onblur="if (this.value === '') {this.value = 'Comment here:';}">
                                 Comment here:</textarea>
-                        </div>
-                        <div class="form-submit1">
-                            <input name="submit" type="submit" id="submit" value="Submit Your Message"><br>
-                        </div>
-                        <div class="clearfix"></div>
-                    </form>
+                    </div>
+                    <div class="form-submit1">
+                        <input name="submit" type="submit" id="submit" value="Submit Your Message">
+                    </div>
+                    <div class="clearfix"><p class="error-alarm"></p></div>
+                    <%--</form>--%>
 
                     <%--*************************** reviews ********************************--%>
                     <div class="single">
@@ -109,7 +104,10 @@
 
                                 <c:forEach var="review" items="${requestScope.reviews}">
                                     <div class="data">
-                                        <div class="title">${review.userId} / ${review.date}</div>
+                                        <div class="title">${review.userId} / ${review.date}
+                                            /
+                                            <a href="${pageContext.request.contextPath}/user/deleteReview?id=${review.id}">delete</a>
+                                        </div>
                                         <p>${review.content}</p>
                                     </div>
                                 </c:forEach>
@@ -119,21 +117,20 @@
                             </li>
 
 
-
-                           <%-- <li>
-                                <div class="preview"></div>
-                                <div class="data">
-                                    <div class="title">denpro / date  </div>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                        turpis egestas.Pellentesque habitant morbi tristique senectus et netus et
-                                        malesuada fames ac turpis egestas.Pellentesque habitant morbi tristique senectus
-                                        et netus et malesuada fames ac turpis egestas.Pellentesque habitant morbi
-                                        tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque
-                                        habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                        egestas.</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>--%>
+                            <%-- <li>
+                                 <div class="preview"></div>
+                                 <div class="data">
+                                     <div class="title">denpro / date  </div>
+                                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                         turpis egestas.Pellentesque habitant morbi tristique senectus et netus et
+                                         malesuada fames ac turpis egestas.Pellentesque habitant morbi tristique senectus
+                                         et netus et malesuada fames ac turpis egestas.Pellentesque habitant morbi
+                                         tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque
+                                         habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                         egestas.</p>
+                                 </div>
+                                 <div class="clearfix"></div>
+                             </li>--%>
 
                         </ul>
                     </div>

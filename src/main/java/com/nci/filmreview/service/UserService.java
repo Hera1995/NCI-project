@@ -21,4 +21,7 @@ public interface UserService {
 
     //add review
     void addReview(Review review);
+
+    //delete review based on id
+    void deleteReview(Integer id);
 }

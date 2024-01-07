@@ -9,15 +9,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
-
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
+
+    public static final String USER_KEY = "user";
 
     @Resource
     private UserService userService;
@@ -37,8 +36,8 @@ public class UserController {
             user = userService.login(user.getEmail(), user.getPassword());
 
             //store user info
-            model.addAttribute("user", user);
-            session.setAttribute("user", user);
+            model.addAttribute(USER_KEY, user);
+            session.setAttribute(USER_KEY, user);
 
             //store user login getMessage()tokens
             //session.setAttribute("user", user);
@@ -73,22 +72,27 @@ public class UserController {
         return "redirect:/loginPage";
     }
 
-    @RequestMapping("/addReview")
-    public String addReview(@ModelAttribute Review review){
-        log.debug("Review content: {}", review.getContent());
-        log.debug("Review userId : {}", review.getUserId());
-
-        try {
-            userService.addReview(review);
-        } catch (RuntimeException e) {
-            log.debug(e.getMessage());
-            return "redirect:/login?msg=" + e.getMessage();
-            //return "redirect:/detail?msg=" + e.getMessage();
+    @ResponseBody
+    @PostMapping("/addReview")
+    public Response<Review> addReview(@RequestBody Review review, HttpSession session) {
+        User user = (User) session.getAttribute(USER_KEY);
+        if (user == null) {
+            return Response.error("Please log in to submit a review");
         }
 
-        return "redirect:/detail";
+        review.setUserId(user.getId());
+        userService.addReview(review);
+
+        return Response.ok(review);
     }
 
+    //delete review based on id
+    @GetMapping("/deleteReview")
+    public String deleteReview(@RequestParam Integer id) {
+        log.debug("deleted id: {}", id);
+        userService.deleteReview(id);
+        return "redirect:/detail";
+    }
 
 
 }

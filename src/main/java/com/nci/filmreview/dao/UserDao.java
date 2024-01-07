@@ -22,4 +22,11 @@ public interface UserDao {
 
     //add review
     void addReview(Review review);
+
+    //delete review based on id
+    void deleteReview(Integer id);
+
+    //update review based on id
+    void updateReview(Review review);
+
 }

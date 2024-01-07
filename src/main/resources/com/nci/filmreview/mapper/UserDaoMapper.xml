@@ -35,5 +35,24 @@
         insert into review(content, date, imdb_id, user_id)
         values (#{content}, #{date}, #{imdbId}, #{userId})
     </insert>
+
+    <!--delete review based on id-->
+    <delete id="deleteReview" parameterType="Integer">
+        delete
+        from review
+        where id = #{id}
+    </delete>
+
+    <!--update review based on id-->
+    <update id="updateReview" parameterType="com.nci.filmreview.entity.Review">
+        update review
+        set content = #{content},
+            date    = #{date},
+            imdb_id = #{imdbId},
+            user_id = #{userId}
+        where id = #{id}
+    </update>
+
+
 </mapper>
 
