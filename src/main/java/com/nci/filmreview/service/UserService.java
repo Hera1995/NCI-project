@@ -18,4 +18,7 @@ public interface UserService {
 
     //find the user
     User findUser(int id);
+
+    //add review
+    void addReview(Review review);
 }

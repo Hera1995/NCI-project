@@ -83,17 +83,23 @@
                     </div>
                     <div class="clearfix"></div>
 
-                    <form method="post" action="contact-post.html">
+                    <%--*************************** form ********************************--%>
+                    <form method="post" action="${pageContext.request.contextPath}/user/addReview">
 
+                        <p class="error-alarm">${param.msg}</p>
                         <div >
-                            <textarea class="comment-textarea" value="Comment" id="comment" onfocus="this.value = '';"
-                                      onblur="if (this.value == '') {this.value = 'Message';}">Comment here:</textarea>
+                            <label for="comment"></label>
+                            <textarea class="comment-textarea" id="comment" name="content"
+                            onfocus="this.value = '';"onblur="if (this.value == '') {this.value = 'Comment here:';}">
+                                Comment here:</textarea>
                         </div>
                         <div class="form-submit1">
                             <input name="submit" type="submit" id="submit" value="Submit Your Message"><br>
                         </div>
                         <div class="clearfix"></div>
                     </form>
+
+                    <%--*************************** reviews ********************************--%>
                     <div class="single">
                         <h1>Reviews</h1>
                         <ul class="single_list">
@@ -111,34 +117,10 @@
 
                                 <div class="clearfix"></div>
                             </li>
-                            <li>
-                                <div class="preview"></div>
-                                <div class="data">
-                                    <div class="title">Wernay / date </div>
-                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                        consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                        et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
-                                        dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend
-                                        option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
-                                        Typi non habent </p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li>
-                                <div class="preview"></div>
-                                <div class="data">
-                                    <div class="title">mr.dev / date</div>
-                                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
-                                        anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta
-                                        decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in
-                                        futurum. qui sequitur mutationem consuetudium lectorum. Mirum est notare quam
-                                        littera gothica, quam nunc putamus parum claram,</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
 
-                            <li>
+
+
+                           <%-- <li>
                                 <div class="preview"></div>
                                 <div class="data">
                                     <div class="title">denpro / date  </div>
@@ -151,7 +133,8 @@
                                         egestas.</p>
                                 </div>
                                 <div class="clearfix"></div>
-                            </li>
+                            </li>--%>
+
                         </ul>
                     </div>
                 </div>

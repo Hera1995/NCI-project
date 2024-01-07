@@ -19,4 +19,7 @@ public interface UserDao {
 
     //list reviews
     List<Review> list(String imdbId);
+
+    //add review
+    void addReview(Review review);
 }

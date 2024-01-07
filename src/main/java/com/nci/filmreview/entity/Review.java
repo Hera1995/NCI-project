@@ -17,7 +17,6 @@ public class Review {
 
     private String imdbId;
 
-    @Temporal(TemporalType.DATE)
     private Date date;
 
     private String content;

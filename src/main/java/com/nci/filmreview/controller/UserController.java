@@ -1,5 +1,6 @@
 package com.nci.filmreview.controller;
 
+import com.nci.filmreview.entity.Review;
 import com.nci.filmreview.entity.User;
 import com.nci.filmreview.service.UserService;
 import jakarta.annotation.Resource;
@@ -66,10 +67,26 @@ public class UserController {
             userService.register(user);
         } catch (RuntimeException e) {
             log.debug(e.getMessage());
-            return "redirect:/register.jsp?msg=" + e.getMessage();
+            return "redirect:/register?msg=" + e.getMessage();
         }
 
         return "redirect:/loginPage";
+    }
+
+    @RequestMapping("/addReview")
+    public String addReview(@ModelAttribute Review review){
+        log.debug("Review content: {}", review.getContent());
+        log.debug("Review userId : {}", review.getUserId());
+
+        try {
+            userService.addReview(review);
+        } catch (RuntimeException e) {
+            log.debug(e.getMessage());
+            return "redirect:/login?msg=" + e.getMessage();
+            //return "redirect:/detail?msg=" + e.getMessage();
+        }
+
+        return "redirect:/detail";
     }
 
 

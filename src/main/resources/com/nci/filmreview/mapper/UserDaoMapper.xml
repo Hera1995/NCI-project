@@ -23,11 +23,17 @@
         values (#{email}, #{firstName}, #{lastName}, #{password}, #{type})
     </insert>
 
-    <!--    check reviews related to current movie-->
+    <!--check reviews related to current movie-->
     <select id="list" resultType="com.nci.filmreview.entity.Review">
         select *
         from review
         where imdb_id = #{imdbId}
     </select>
+
+    <!--add reviews to database-->
+    <insert id="addReview" parameterType="com.nci.filmreview.entity.Review" useGeneratedKeys="true" keyProperty="id">
+        insert into review(content, date, imdb_id, user_id)
+        values (#{content}, #{date}, #{imdbId}, #{userId})
+    </insert>
 </mapper>
 

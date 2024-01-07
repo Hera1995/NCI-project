@@ -9,6 +9,10 @@ import org.springframework.util.DigestUtils;
 import org.springframework.util.ObjectUtils;
 
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -64,4 +68,36 @@ public class UserServiceImpl implements UserService {
         return userDao.findById(id);
     }
 
+    //add review
+    @Override
+    public void addReview(Review review){
+        //when the comment is empty or default
+        if (review.getContent() == null || review.getContent().isEmpty()
+                || review.getContent().equals("\\s*Comment here:")  || review.getContent().equals("\\s*Comment here: + \\s"))
+            throw new RuntimeException("Your message is empty!");
+
+        //set current date
+        //obtain current date
+        LocalDate localDate = LocalDate.now();
+
+        //exchange to LocalDateTime
+        LocalDateTime localDateTime = localDate.atStartOfDay();
+
+        //exchange to java.util.Date
+        //choose the time zone to be london
+        ZoneId londonZone = ZoneId.of("Europe/London");
+        Date date = Date.from(localDateTime.atZone(londonZone).toInstant());
+        review.setDate(date);
+
+        //obtain imdbId
+
+
+        //obtain userId
+
+        //if usrId is empty
+        //if (review.getUserId() == null ) throw new RuntimeException("Please log in to submit a review");
+
+        //add review to db
+        userDao.addReview(review);
+    }
 }

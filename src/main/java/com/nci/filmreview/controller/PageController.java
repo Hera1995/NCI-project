@@ -38,9 +38,13 @@ public class PageController {
 
     @GetMapping("/detail")
     public String movieDetail(@RequestParam String movieId, @RequestParam String title, @RequestParam String time, @RequestParam String imgUrl, Model model) {
+
+
+        //add reviews to model
         List<Review> reviews = userService.list(movieId);
         model.addAttribute("reviews", reviews);
 
+        //add users to model
         //create a new list to save userIds
         List<User> users = new ArrayList<>();
 
@@ -52,13 +56,15 @@ public class PageController {
         }
         model.addAttribute("users", users);
 
-
+        //add movie info to model
         model.addAttribute("movieId", movieId);
         model.addAttribute("title", title);
         model.addAttribute("time", time);
         model.addAttribute("imgUrl", imgUrl);
 
-        return "detail";
+
+
+        return "/detail";
     }
 
 
