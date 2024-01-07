@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.nci.filmreview.controller.UserController.USER_KEY;
+
 @Controller
 public class PageController {
 
@@ -25,7 +27,7 @@ public class PageController {
 
         return "index";
     }
-    
+
     @GetMapping("/loginPage")
     public String loginPage() {
         return "login";
@@ -54,7 +56,7 @@ public class PageController {
             User user = userService.findUser(userId); //find the user
             users.add(user); // save the user to users list
         }
-        model.addAttribute("users", users);
+        model.addAttribute(USER_KEY, users);
 
         //add movie info to model
         model.addAttribute("movieId", movieId);
@@ -63,10 +65,8 @@ public class PageController {
         model.addAttribute("imgUrl", imgUrl);
 
 
-
-        return "/detail";
+        return "detail";
     }
-
 
 
 }

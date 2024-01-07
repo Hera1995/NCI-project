@@ -80,6 +80,13 @@ public class UserController {
             return Response.error("Please log in to submit a review");
         }
 
+        if (review.getContent() == null || review.getContent().isEmpty()
+                || review.getContent().equals("\\s*Comment here:") || review.getContent().equals("\\s*Comment here: + \\s")) {
+            // TODO
+            return Response.error("TODO");
+        }
+
+        review.setUsername(user.getFirstName() + " " + user.getLastName());
         review.setUserId(user.getId());
         userService.addReview(review);
 

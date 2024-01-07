@@ -59,6 +59,7 @@ public class UserServiceImpl implements UserService {
         return userDao.list(imdbId);
     }
 
+
     //find user by Id
     @Override
     public User findUser(int id) {
@@ -69,13 +70,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addReview(Review review) {
         //when the comment is empty or default
-        if (review.getContent() == null || review.getContent().isEmpty()
-                || review.getContent().equals("\\s*Comment here:") || review.getContent().equals("\\s*Comment here: + \\s"))
-            throw new RuntimeException("Your message is empty!");
-
         //set current date
-
-
         review.setDate(new Date());
 
         //obtain imdbId

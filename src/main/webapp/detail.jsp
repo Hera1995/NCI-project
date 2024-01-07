@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 
 <!DOCTYPE HTML>
@@ -102,10 +103,11 @@
                                 <div class="preview"></div>
 
 
-                                <c:forEach var="review" items="${requestScope.reviews}">
+                                <c:forEach var="review" items="${reviews}">
                                     <div class="data">
-                                        <div class="title">${review.userId} / ${review.date}
-                                            /
+                                        <div class="title">${review.username} / <fmt:formatDate value="${review.date}"
+                                                                                                pattern="yyyy-MM-dd HH:mm:ss"/>
+
                                             <a href="${pageContext.request.contextPath}/user/deleteReview?id=${review.id}">delete</a>
                                         </div>
                                         <p>${review.content}</p>
