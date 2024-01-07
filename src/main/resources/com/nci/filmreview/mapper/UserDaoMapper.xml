@@ -32,8 +32,8 @@
 
     <!--add reviews to database-->
     <insert id="addReview" parameterType="com.nci.filmreview.entity.Review" useGeneratedKeys="true" keyProperty="id">
-        insert into review(content, date, imdb_id, user_id)
-        values (#{content}, #{date}, #{imdbId}, #{userId})
+        insert into review(content, date, imdb_id, user_id, username)
+        values (#{content}, #{date}, #{imdbId}, #{userId}, #{username})
     </insert>
 
     <!--delete review based on id-->
