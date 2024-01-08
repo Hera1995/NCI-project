@@ -48,8 +48,6 @@
         update review
         set content = #{content},
             date    = #{date},
-            imdb_id = #{imdbId},
-            user_id = #{userId}
         where id = #{id}
     </update>
 

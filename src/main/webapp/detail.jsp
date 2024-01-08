@@ -83,11 +83,10 @@
 
 
                     <div>
-                        <label for="comment"></label>
                         <textarea class="comment-textarea" id="comment" name="content"
                                   onfocus="this.value = '';"
                                   onblur="if (this.value === '') {this.value = 'Comment here:';}">
-                                Comment here:</textarea>
+                        Comment here:</textarea><label for="comment"></label>
                     </div>
                     <div class="form-submit1">
                         <input name="submit" type="submit" id="submit" value="Submit Your Message">
@@ -107,8 +106,8 @@
                                     <div class="data">
                                         <div class="title">${review.username} / <fmt:formatDate value="${review.date}"
                                                                                                 pattern="yyyy-MM-dd HH:mm:ss"/>
-
-                                            <a href="${pageContext.request.contextPath}/user/deleteReview?id=${review.id}">delete</a>
+                                            <a href=#comment><button id="edit-btn" class="review-button" value="${review.id}" >edit</button></a>
+                                            <button id="delete-btn" class="review-button" value="${review.id}">delete</button>
                                         </div>
                                         <p>${review.content}</p>
                                     </div>

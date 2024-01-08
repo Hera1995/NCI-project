@@ -81,11 +81,14 @@ public class UserController {
         }
 
         if (review.getContent() == null || review.getContent().isEmpty()
-                || review.getContent().equals("\\s*Comment here:") || review.getContent().equals("\\s*Comment here: + \\s")) {
-            // TODO
-            return Response.error("TODO");
+                ||review.getContent().contains("\\s*Comment here:") ) {
+                //|| review.getContent().equals("\\s*Comment here:") || review.getContent().equals("\\s*Comment here: + \\s")) {
+
+            // return message
+            return Response.error("Your message is empty");
         }
 
+        //set data
         review.setUsername(user.getFirstName() + " " + user.getLastName());
         review.setUserId(user.getId());
         userService.addReview(review);
@@ -94,12 +97,33 @@ public class UserController {
     }
 
     //delete review based on id
+    @ResponseBody
     @GetMapping("/deleteReview")
-    public String deleteReview(@RequestParam Integer id) {
-        log.debug("deleted id: {}", id);
+    public Response<Integer> deleteReview(@RequestParam Integer id) {
         userService.deleteReview(id);
-        return "redirect:/detail";
+        return Response.ok(id);
     }
 
+    @ResponseBody
+    @PostMapping("/updateReview")
+    public Response<Review> updateReview(@RequestBody Review review, HttpSession session) {
+        User user = (User) session.getAttribute(USER_KEY);
+        if (user == null) {
+            return Response.error("Please log in to edit your review");
+        }
+
+        if (review.getContent() == null || review.getContent().isEmpty()
+                ||review.getContent().matches(".*\\s*Comment here:.*")) {
+            //review.getContent().equals("\\s*Comment here:") || review.getContent().equals("\\s*Comment here: + \\s")
+
+            // return message
+            return Response.error("Your message is empty");
+        }
+
+
+        userService.updateReview(review);
+
+        return Response.ok(review);
+    }
 
 }

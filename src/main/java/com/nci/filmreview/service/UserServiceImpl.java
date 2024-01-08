@@ -73,11 +73,6 @@ public class UserServiceImpl implements UserService {
         //set current date
         review.setDate(new Date());
 
-        //obtain imdbId
-
-
-        //obtain userId
-
         //if usrId is empty
         //if (review.getUserId() == null ) throw new RuntimeException("Please log in to submit a review");
 
@@ -88,6 +83,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteReview(Integer id) {
         userDao.deleteReview(id);
+    }
+
+    @Override
+    public void updateReview(Review review){
+        //set current date
+        review.setDate(new Date());
+
+        //update review to db
+        userDao.updateReview(review);
     }
 
 }
