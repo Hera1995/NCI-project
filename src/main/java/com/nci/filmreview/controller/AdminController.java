@@ -27,7 +27,7 @@ public class AdminController {
 
 
     //get user list
-    @GetMapping("listUser")
+    @GetMapping("/listUser")
     public String ListUsers(Model model) {
         //get list
         List<User> users = adminService.list();
@@ -38,7 +38,7 @@ public class AdminController {
 
 
     //change user type
-    @GetMapping("changeUserType")
+    @GetMapping("/changeUserType")
     public String changeUserType(@RequestParam Integer id, Model model){
         //1. search by id
         User user = adminService.findUserById(id);
