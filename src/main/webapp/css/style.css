@@ -1218,7 +1218,6 @@ a.btn1:hover {
 
 .movie_image {
     position: relative;
-    border: 2px solid #d8232a;
 }
 
 .movie_rating {
@@ -2132,6 +2131,10 @@ div.register-bottom-grid {
     margin-top: 30px;
 }
 
+/*.ai-inquiry h2{
+    font-size: 25px;
+}*/
+
 /* ai container */
 .ai-chat-container {
     border: 1px solid #ccc;
@@ -2282,7 +2285,7 @@ div.register-bottom-grid {
     text-decoration: none;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1050px) {
 
     .box {
         width: 50%;
@@ -2314,11 +2317,19 @@ div.register-bottom-grid {
     resize: none;
 }
 
-.review-button{
+.review-button-delete{
     border: none;
 }
 
-.review-button:hover {
+.review-button-edit{
+    border: none;
+}
+
+.review-button-delete:hover {
+    color: #d8232a;
+}
+
+.review-button-edit:hover {
     color: #d8232a;
 }
 
@@ -2346,10 +2357,64 @@ div.register-bottom-grid {
     color: darkblue;
 }
 
+.user-management-title{
+    font-size:25px;
+    text-align: center;
+}
+
+
 @media (max-width: 990px) {
     .user-management {
         width: 50%;
         max-width: 100%;
         overflow-x: auto;
+    }
+
+    table.user-management td:nth-child(5),
+    table.user-management th:nth-child(5) {
+        display: none;
+    }
+}
+
+@media (max-width: 620px) {
+    table.user-management td:nth-child(2),
+    table.user-management th:nth-child(2) {
+        display: none;
+    }
+
+    .user-management {
+        font-size: 10px;
+    }
+
+    .user-management-title{
+        font-size:20px;
+    }
+
+    .user-input {
+        width: calc(100% - 10px);
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .ai-inquiry h2{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .user-management-title{
+        font-size:15px;
+    }
+
+    .user-management {
+        font-size: 8px;
+    }
+
+    .user-management th, td {
+        padding: 2px;
+    }
+
+    .ai-inquiry h2{
+        font-size: 15px;
     }
 }

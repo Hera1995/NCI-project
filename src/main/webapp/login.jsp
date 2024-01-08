@@ -51,7 +51,7 @@
                 <div class="col-md-6 login-right">
                     <h3>Registered Customers</h3>
                     <p>If you have an account with us, please log in.</p>
-                    <p class="error-alarm">${param.msg}</p>
+                    <p style="color: red;">${param.msg}</p>
                     <form action="${pageContext.request.contextPath}/user/login" method="post">
                         <div>
                             <span>Email Address<label>*</label></span>

@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="Movie, Review, Movie Review, Film, Film Review"/>
     <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -57,7 +57,7 @@
         </div>
 <%--**************************************** middle **********************************************--%>
         <div class="content">
-            <h1>User Management Table</h1>
+            <h1 class="user-management-title">User Management Table</h1>
 
             <table class="user-management">
                 <thead>
