@@ -47,7 +47,7 @@
     <update id="updateReview" parameterType="com.nci.filmreview.entity.Review">
         update review
         set content = #{content},
-            date = #{date}
+            date    = #{date}
         where id = #{id}
     </update>
 
