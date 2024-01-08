@@ -74,7 +74,7 @@
                         <div class="detail-info"><p class="movie_option"><strong>Year: </strong>${time}</p></div>
                         <div class="detail-info"><p class="movie_option"><strong>imdbID: </strong>${movieId}</p></div>
 
-                        <div class="down_btn detail-info"><a class="btn1" href=#comment><span> </span>Review</a></div>
+                        <div class="down_btn detail-info"><a class="btn1"><span> </span>Review</a></div>
                     </div>
                     <div class="clearfix"></div>
 
@@ -84,9 +84,9 @@
 
                     <div>
                         <textarea class="comment-textarea" id="comment" name="content"
-                                  onfocus="this.value = '';"
-                                  onblur="if (this.value === '') {this.value = 'Comment here:';}">
-                        Comment here:</textarea><label for="comment"></label>
+                                  onfocus="this.value = '';" placeholder="Comment here:"
+                                  onblur="if (this.value === ''){this.value = 'Comment here:';}"></textarea>
+                        <label for="comment"></label>
                     </div>
                     <div class="form-submit1">
                         <input name="submit" type="submit" id="submit" value="Submit Your Message">
@@ -106,8 +106,14 @@
                                     <div class="data">
                                         <div class="title">${review.username} / <fmt:formatDate value="${review.date}"
                                                                                                 pattern="yyyy-MM-dd HH:mm:ss"/>
-                                            <a href=#comment><button id="edit-btn" class="review-button" value="${review.id}" >edit</button></a>
-                                            <button id="delete-btn" class="review-button" value="${review.id}">delete</button>
+                                            <a>
+                                                <button id="edit-btn" class="review-button-edit" value="${review.id}">
+                                                    edit
+                                                </button>
+                                            </a>
+                                            <button id="delete-btn" class="review-button-delete" value="${review.id}">
+                                                delete
+                                            </button>
                                         </div>
                                         <p>${review.content}</p>
                                     </div>
