@@ -19,6 +19,7 @@
     </div>
     <div class="col-sm-3 header_right">
         <ul class="header_right_box">
+
             <li><img src="images/p0.png" alt=""/></li>
             <li>
                 <c:choose>
@@ -30,8 +31,10 @@
                     </c:otherwise>
                 </c:choose>
             </li>
-
             <li class="last"><i class="edit"> </i></li>
+            <c:if test="${user.type eq true}">
+                <li><a href="/admin/listUser" class="manage-users">manage users</a></li>
+            </c:if>
             <div class="clearfix"></div>
         </ul>
     </div>
@@ -57,7 +60,7 @@
             </li>
         </ul>
     </div>
-    <div class="banner_desc">
+<%--    <div class="banner_desc">
         <div class="col-md-9">
             <ul class="list_1">
                 <li>Published <span class="m_1">Dec 20, 2023</span></li>
@@ -73,5 +76,5 @@
                     <p>215</p></li>
             </ul>
         </div>
-    </div>
+    </div>--%>
 </div>

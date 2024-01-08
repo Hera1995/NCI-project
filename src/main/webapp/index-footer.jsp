@@ -35,7 +35,7 @@
                             <li><a href="#">New products</a></li>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Policy</a></li>
-                            <li><a href="loginPage">Log in</a></li>
+                            <li><a href="loginPage">Test log in</a></li>
                         </ul>
                     </div>
                     <div class="col_1_of_3 span_1_of_3">

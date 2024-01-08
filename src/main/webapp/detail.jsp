@@ -16,8 +16,8 @@
     <%--<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>--%>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/detail.js"></script>
-    <link href='http://fonts.useso.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet'
-          type='text/css'>
+    <%--<link href='http://fonts.useso.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet'
+          type='text/css'>--%>
 </head>
 <body>
 <div class="container">
@@ -101,19 +101,15 @@
                             <li>
                                 <div class="preview"></div>
 
-
                                 <c:forEach var="review" items="${reviews}">
                                     <div class="data">
-                                        <div class="title">${review.username} / <fmt:formatDate value="${review.date}"
-                                                                                                pattern="yyyy-MM-dd HH:mm:ss"/>
-                                            <a>
-                                                <button id="edit-btn" class="review-button-edit" value="${review.id}">
-                                                    edit
-                                                </button>
-                                            </a>
-                                            <button id="delete-btn" class="review-button-delete" value="${review.id}">
-                                                delete
-                                            </button>
+                                        <div class="title">${review.username} / <fmt:formatDate value="${review.date}" pattern="yyyy-MM-dd HH:mm:ss"/>
+                                            <c:if test="${user.type eq true || review.userId eq user.id}">
+                                                <a href=#comment>
+                                                    <button id="edit-btn" class="review-button-edit" value="${review.id}" >edit</button>
+                                                </a>
+                                                <button id="delete-btn" class="review-button-delete" value="${review.id}">delete</button>
+                                            </c:if>
                                         </div>
                                         <p>${review.content}</p>
                                     </div>
@@ -123,21 +119,6 @@
                                 <div class="clearfix"></div>
                             </li>
 
-
-                            <%-- <li>
-                                 <div class="preview"></div>
-                                 <div class="data">
-                                     <div class="title">denpro / date  </div>
-                                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                         turpis egestas.Pellentesque habitant morbi tristique senectus et netus et
-                                         malesuada fames ac turpis egestas.Pellentesque habitant morbi tristique senectus
-                                         et netus et malesuada fames ac turpis egestas.Pellentesque habitant morbi
-                                         tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque
-                                         habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                         egestas.</p>
-                                 </div>
-                                 <div class="clearfix"></div>
-                             </li>--%>
 
                         </ul>
                     </div>

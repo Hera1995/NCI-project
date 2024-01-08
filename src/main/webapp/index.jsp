@@ -14,8 +14,8 @@
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- start plugins -->
-    <link href='http://fonts.useso.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet'
-          type='text/css'>
+    <%--<link href='http://fonts.useso.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet'
+          type='text/css'>--%>
 
 </head>
 <body>
@@ -77,16 +77,6 @@
 
                             </div>
                         </div>
-
-                    </div>
-                </div>
-
-                <!-- reviews div 2***************************************************************	-->
-
-                <div class="center">
-
-                    <!-- put 3 pictures in another div to style pictures -->
-                    <div class="top3">
                         <div class="box">
                             <a href="${pageContext.request.contextPath}/detail?movieId=tt2382320&title=No Time to Die&time=2021&imgUrl=https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX300.jpg">
                                 <img src="https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX300.jpg" alt="No Time to Die"></a>
@@ -120,8 +110,11 @@
 
                             </div>
                         </div>
+
+
                     </div>
                 </div>
+
 
 
                 <!--pages***************************************************************	-->

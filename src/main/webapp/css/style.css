@@ -2055,7 +2055,7 @@ div.register-bottom-grid {
     }
 }
 
-/*************************my css*********************************/
+/************************* my css *********************************/
 /****************************************************************/
 /************************ index *********************************/
 
@@ -2178,7 +2178,7 @@ div.register-bottom-grid {
 }
 
 
-/***********************index design2**********************/
+/*********************** index design2 **********************/
 /* put text areas and pictures in the center */
 .center {
     text-align: center;
@@ -2271,6 +2271,17 @@ div.register-bottom-grid {
     object-fit: cover;
 }
 
+.manage-users{
+    color: #3f444e;
+    padding-top:10px;
+    text-decoration: none;
+}
+
+.manage-users:hover {
+    color: #ac2925;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 980px) {
 
     .box {
@@ -2284,7 +2295,7 @@ div.register-bottom-grid {
     }
 }
 
-/*******************detail**********************/
+/******************* detail **********************/
 .detail-info {
     padding: 10px;
 }
@@ -2309,4 +2320,36 @@ div.register-bottom-grid {
 
 .review-button:hover {
     color: #d8232a;
+}
+
+/******************* admin **********************/
+.user-management {
+    margin: 20px auto;
+    padding-top: 25px;
+    width: 85%;
+}
+
+.user-management th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.user-management button {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0;
+}
+
+.user-management button:hover {
+    color: darkblue;
+}
+
+@media (max-width: 990px) {
+    .user-management {
+        width: 50%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
 }
