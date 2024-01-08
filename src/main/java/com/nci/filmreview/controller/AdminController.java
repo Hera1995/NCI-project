@@ -37,7 +37,6 @@ public class AdminController {
     }
 
 
-    @ResponseBody
     //change user type
     @GetMapping("changeUserType")
     public String changeUserType(@RequestParam Integer id, Model model){
@@ -54,7 +53,6 @@ public class AdminController {
     }
 
     //delete user by id
-    @ResponseBody
     @GetMapping("/deleteUser")
     public String deleteUser(@RequestParam Integer id) {
         adminService.deleteUserById(id);

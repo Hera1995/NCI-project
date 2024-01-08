@@ -66,7 +66,7 @@ public class UserController {
             userService.register(user);
         } catch (RuntimeException e) {
             log.debug(e.getMessage());
-            return "redirect:/register?msg=" + e.getMessage();
+            return "redirect:/registerPage?msg=" + e.getMessage();
         }
 
         return "redirect:/loginPage";
