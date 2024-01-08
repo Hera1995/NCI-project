@@ -39,15 +39,11 @@ public class PageController {
     @GetMapping("/detail")
     public String movieDetail(@RequestParam String movieId, @RequestParam String title, @RequestParam String time, @RequestParam String imgUrl, Model model, HttpSession session) {
 
-
         //add reviews to model
         List<Review> reviews = userService.list(movieId);
         model.addAttribute("reviews", reviews);
 
         //add users to model
-        //create a new list to save userIds
-
-
         model.addAttribute(USER_KEY, session.getAttribute(USER_KEY));
 
         //add movie info to model
@@ -59,6 +55,5 @@ public class PageController {
 
         return "detail";
     }
-
 
 }

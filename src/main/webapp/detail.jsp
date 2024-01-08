@@ -106,8 +106,14 @@
                                     <div class="data">
                                         <div class="title">${review.username} / <fmt:formatDate value="${review.date}"
                                                                                                 pattern="yyyy-MM-dd HH:mm:ss"/>
-                                            <a href=#comment><button id="edit-btn" class="review-button" value="${review.id}" >edit</button></a>
-                                            <button id="delete-btn" class="review-button" value="${review.id}">delete</button>
+                                            <%--<a href=#comment><button id="edit-btn" class="review-button" value="${review.id}" >edit</button></a>
+                                            <button id="delete-btn" class="review-button" value="${review.id}">delete</button>--%>
+                                            <c:if test="${user.type eq true || review.userId eq user.id}">
+                                                <a href=#comment>
+                                                    <button id="edit-btn" class="review-button" value="${review.id}" >edit</button>
+                                                </a>
+                                                <button id="delete-btn" class="review-button" value="${review.id}">delete</button>
+                                            </c:if>
                                         </div>
                                         <p>${review.content}</p>
                                     </div>

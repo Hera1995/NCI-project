@@ -8,6 +8,24 @@
         select * from user
     </select>
 
+    <!--find user by id-->
+    <select id="findUserById" parameterType="Integer" resultType="com.nci.filmreview.entity.User">
+        select * from user
+        where id = #{id}
+    </select>
+
+    <!--update user type-->
+    <update id="updateUserType" parameterType="com.nci.filmreview.entity.User">
+        update user
+        set type = #{type}
+        where id = #{id}
+    </update>
+
+    <!--delete user-->
+    <delete id="deleteUserById" parameterType="Integer">
+        delete from user
+        where id = #{id}
+    </delete>
 
 
 </mapper>

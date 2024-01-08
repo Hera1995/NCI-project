@@ -9,4 +9,12 @@ public interface AdminService {
     //user list
     List<User> list();
 
+    //search user by id
+    User findUserById(Integer id);
+
+    //update user type by id
+    void updateUserType(User user);
+
+    //delete user by id
+    void deleteUserById(Integer id);
 }

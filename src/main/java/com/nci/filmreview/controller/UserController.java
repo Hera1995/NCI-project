@@ -43,7 +43,7 @@ public class UserController {
             //session.setAttribute("user", user);
         } catch (Exception e) {
             log.error(e.getMessage());
-            return "redirect:/login.jsp?msg=" + e.getMessage();
+            return "redirect:/loginPage?msg=" + e.getMessage();
 
 
         }
